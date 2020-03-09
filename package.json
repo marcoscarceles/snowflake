@@ -5,15 +5,22 @@
   "repository": "https://github.com/Medium/eng-growth",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
     "d3": "^4.11.0",
+    "fs": "^0.0.1-security",
+    "googleapis": "39",
     "next": "^9.0.7",
+    "node-fetch": "^2.6.0",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "readline": "^1.3.0"
   },
   "scripts": {
     "dev": "next",
     "export": "next build && next export",
-    "flow": "flow"
+    "flow": "flow",
+    "load-sheet": "npx babel-node script/novum.js"
   },
   "devDependencies": {
     "@babel/preset-flow": "^7.0.0",
