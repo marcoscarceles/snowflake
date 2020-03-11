@@ -2,9 +2,10 @@
 import * as d3 from 'd3'
 
 export type TrackId = 'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' |
-  'PROJECT_MANAGEMENT' | 'COMMUNICATION' | 'CRAFT' | 'INITIATIVE' |
-  'CAREER_DEVELOPMENT' | 'ORG_DESIGN' | 'WELLBEING' | 'ACCOMPLISHMENT' |
-  'MENTORSHIP' | 'EVANGELISM' | 'RECRUITING' | 'COMMUNITY'
+  'ENGINEERING_PRACTICES' | 'SOFTWARE_FUNDAMENTALS' | 'QUALITY' | 'SOFTWARE_SCALE' | 'PROJECT_MANAGEMENT' |
+  'TIME_MANAGEMENT' | 'EFFECTIVE_COMMUNICATION' | 'CONFLICT_RESOULTION' | 'SELF_MANAGEMENT' | 'INITIATIVE' | 'FLEXIBILITY' | 'CREATIVE_THINKING' |
+  'MOTIVATING_OTHERS' | 'DEVELOPING_OTHERS' | 'TEAMWORK' | 'ACCOMPLISHMENT'
+
 export type Milestone = 0 | 1 | 2 | 3 | 4 | 5
 
 export type MilestoneMap = {
@@ -12,52 +13,26 @@ export type MilestoneMap = {
   'WEB_CLIENT': Milestone,
   'FOUNDATIONS': Milestone,
   'SERVERS': Milestone,
+
+  'ENGINEERING_PRACTICES': Milestone,
+  'SOFTWARE_FUNDAMENTALS': Milestone,
+  'QUALITY': Milestone,
+  'SOFTWARE_SCALE': Milestone,
   'PROJECT_MANAGEMENT': Milestone,
-  'COMMUNICATION': Milestone,
-  'CRAFT': Milestone,
+
+  'TIME_MANAGEMENT': Milestone,
+  'EFFECTIVE_COMMUNICATION': Milestone,
+  'CONFLICT_RESOULTION': Milestone,
+  'SELF_MANAGEMENT': Milestone,
   'INITIATIVE': Milestone,
-  'CAREER_DEVELOPMENT': Milestone,
-  'ORG_DESIGN': Milestone,
-  'WELLBEING': Milestone,
-  'ACCOMPLISHMENT': Milestone,
-  'MENTORSHIP': Milestone,
-  'EVANGELISM': Milestone,
-  'RECRUITING': Milestone,
-  'COMMUNITY': Milestone
-}
-export const milestones = [0, 1, 2, 3, 4, 5]
+  'FLEXIBILITY': Milestone,
+  'CREATIVE_THINKING': Milestone,
 
-export const milestoneToPoints = (milestone: Milestone): number => {
-  switch (milestone) {
-    case 0: return 0
-    case 1: return 1
-    case 2: return 3
-    case 3: return 6
-    case 4: return 12
-    case 5: return 20
-    default: return 0
-  }
+  'MOTIVATING_OTHERS': Milestone,
+  'DEVELOPING_OTHERS': Track,
+  'TEAMWORK': Track,
+  'ACCOMPLISHMENT': Track,
 }
-
-export const pointsToLevels = {
-  '0': '1.1',
-  '5': '1.2',
-  '11': '1.3',
-  '17': '2.1',
-  '23': '2.2',
-  '29': '2.3',
-  '36': '3.1',
-  '43': '3.2',
-  '50': '3.3',
-  '58': '4.1',
-  '66': '4.2',
-  '74': '4.3',
-  '90': '5.1',
-  '110': '5.2',
-  '135': '5.3',
-}
-
-export const maxLevel = 135
 
 export type Track = {
   displayName: string,
@@ -70,26 +45,39 @@ export type Track = {
   }[]
 }
 
-type Tracks = {|
+type Tracks = {
   'MOBILE': Track,
   'WEB_CLIENT': Track,
   'FOUNDATIONS': Track,
   'SERVERS': Track,
+
+  'ENGINEERING_PRACTICES': Track,
+  'SOFTWARE_FUNDAMENTALS': Track,
+  'QUALITY': Track,
+  'SOFTWARE_SCALE': Track,
   'PROJECT_MANAGEMENT': Track,
-  'COMMUNICATION': Track,
-  'CRAFT': Track,
+
+  'TIME_MANAGEMENT': Track,
+  'EFFECTIVE_COMMUNICATION': Track,
+  'CONFLICT_RESOULTION': Track,
+  'SELF_MANAGEMENT': Track,
   'INITIATIVE': Track,
-  'CAREER_DEVELOPMENT': Track,
-  'ORG_DESIGN': Track,
-  'WELLBEING': Track,
+  'FLEXIBILITY': Track,
+  'CREATIVE_THINKING': Track,
+
+  'MOTIVATING_OTHERS': Track,
+  'DEVELOPING_OTHERS': Track,
+  'TEAMWORK': Track,
   'ACCOMPLISHMENT': Track,
-  'MENTORSHIP': Track,
-  'EVANGELISM': Track,
-  'RECRUITING': Track,
-  'COMMUNITY': Track
-|}
+
+}
 
 export const tracks: Tracks = {
+
+  /*
+   * Engineering - Building
+   */
+
   "MOBILE": {
     "displayName": "Mobile",
     "category": "A",
@@ -358,812 +346,651 @@ export const tracks: Tracks = {
     }],
   },
 
+  /*
+   * Engineering - Fundamentals
+   */
+
+  "ENGINEERING_PRACTICES": {
+    "displayName": "Engineering Practices",
+    "category": "B",
+    "description": "Makes Novum's solutions robust and aids rapid value delivery by applying stablished engineering practices and patterns and/or promotes alternatives ways of working for achieving the same goal.",
+    "milestones": [{
+      "summary": "Produces software according to the industry stablished good practices standards.	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Recognises and efficiently applies principles of working with software like DRY, KISS, YAGNI (among others).",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Delivers solutions efficiently, maximising the delivery of value to the current context	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is an early-adopter of software engineering methodologies. Promotes XP practices, producing tooling and mentoring to ease the introduction of  delivery patterns	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is an innovator in the context of methodologies and ways of working, introducing patterns that maximise the value throughput of the company	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "SOFTWARE_FUNDAMENTALS": {
+    "displayName": "Software Fundamentals",
+    "category": "B",
+    "description": "Ability to effectively work with software by applying knowledge to day to day tasks and software design. Understanding and mastering the underlying difficulties of working with software, from correctness and efficiency to resilience and scalability.",
+    "milestones": [
+      {
+        "summary": "Develops a small code task like a product improvement or bugfixing.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Develops a service through your team.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Develops a product through your team.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Develops a complex product with a significant amount of different teams.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Manages major company technology changes by multiple areas.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }],
+  },
+
+  "QUALITY": {
+    "displayName": "Quality",
+    "category": "B",
+    "description": "Embeds Quality to the Products they deliver at every stage, from inception to delivery.",
+    "milestones": [
+      {
+        "summary": "Embeds quality in the delivery of a solution to a well defined problem.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Embeds qualtity in the delivery of complex solutions, during component integration.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Embeds quality during product definition (functional and non-functional).",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Promotes a quality culture, where it is embeded from the inception of the product to its delivery.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Embeds quality in the company's culture.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }],
+  },
+
+  "SOFTWARE_SCALE": {
+    "displayName": "Software at Scale",
+    "category": "B",
+    "description": "Delivers software that can be used at large scale with growth capacity without compromising user experience, availability and operational costs. Delivers software that is widely available and effectively performs in wide spectrum of scenarios (not necessarily all being well-intended).",
+    "milestones": [
+      {
+        "summary": "Recognises complexities of delivering software at large scale.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Effectively manages local resources or within a limited scope.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Has in-depth understanding of capacity constraints and efficiently manages scalability of small to medium sized components.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Has in-depth understanding of capacity constraints and produces solutions reusable beyond a single component.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Is a leading role at CTO scope in scalability and performance.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }],
+  },
+
   "PROJECT_MANAGEMENT": {
-    "displayName": "Project management",
+    "displayName": "Project Management",
     "category": "B",
-    "description": "Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously",
+    "description": "Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously.",
     "milestones": [{
-      "summary": "Effectively delivers individual tasks",
+      "summary": "Effectively delivers individual tasks.",
       "signals": [
-        "Estimates small tasks accurately",
-        "Delivers tightly-scoped projects efficiently",
-        "Writes effective technical specs outlining approach",
       ],
       "examples": [
-        "Wrote the technical spec for featured post images",
-        "Delivered stream item support for email digests",
-        "Delivered payment history dashboard",
       ],
     }, {
-      "summary": "Effectively delivers small personal projects",
+      "summary": "Effectively delivers small personal projects.",
       "signals": [
-        "Performs research and considers alternative approaches",
-        "Balances pragmatism and polish appropriately",
-        "Defines and hits interim milestones",
       ],
       "examples": [
-        "Delivered promo editor",
-        "Delivered audio uploading for web client",
-        "Executed the recommends to claps backfill",
       ],
     }, {
-      "summary": "Effectively delivers projects through a small team",
+      "summary": "Effectively delivers projects through a small team.",
       "signals": [
-        "Delegates tasks to others appropriately",
-        "Integrates business needs into project planning",
-        "Chooses appropriate project management strategy based on context",
       ],
       "examples": [
-        "Ran project retro to assess improvement opportunities",
-        "Completed launch checklist unprompted for well controlled rollout",
-        "Facilitated project kickoff meeting to get buy-in",
       ],
     }, {
-      "summary": "Effectively delivers projects through a large team, or with a significant amount of stakeholders or complexity",
+      "summary": "Effectively delivers projects through a large team, or with a significant amount of stakeholders or complexity.",
       "signals": [
-        "Finds ways to deliver requested scope faster, and prioritizes backlog",
-        "Manages dependencies on other projects and teams",
-        "Leverages recognition of repeated project patterns",
       ],
       "examples": [
-        "Oversaw technical delivery of Hightower",
-        "Managed infrastructure migration to VPC",
-        "Involved marketing, legal, and appropriate functions at project start",
       ],
     }, {
-      "summary": "Manages major company pushes delivered by multiple teams",
+      "summary": "Manages major company pushes delivered by multiple teams.",
       "signals": [
-        "Considers external constraints and business objectives when planning",
-        "Leads teams of teams, and coordinates effective cross-functional collaboration",
-        "Owns a key company metric",
       ],
       "examples": [
-        "Managed technical migration to SOA",
-        "Lead technical delivery of 10/7",
-        "Delivered multi-month engineering project on time",
       ],
     }],
   },
 
-  "COMMUNICATION": {
-    "displayName": "Communication",
-    "category": "B",
-    "description": "Shares the right amount of information with the right people, at the right time, and listens effectively",
+  /*
+   * General - Executing
+   */
+
+  "TIME_MANAGEMENT": {
+    "displayName": "Time Management",
+    "category": "C",
+    "description": "The ability to get things done effectively and efficiently, which means the right things done at the right time, with the appropriate amount of time spent on them. Time Management involves analyzing how time is spent, and then prioritizing different work tasks. Imply respecting other's time and team members time management.",
     "milestones": [{
-      "summary": "Communicates effectively to close stakeholders when called upon, and incorporates constructive feedback",
+      "summary": "Effectively managing one’s time and resources to ensure that work is completed efficiently.",
       "signals": [
-        "Communicates project status clearly and effectively",
-        "Collaborates with others with empathy",
-        "Asks for help at the appropriate juncture",
       ],
       "examples": [
-        "Updated The Watch before running a backfill",
-        "Updated project status changes in Asana promptly",
-        "Gave thoughtful check-in and check-out comments",
       ],
     }, {
-      "summary": "Communicates with the wider team appropriately, focusing on timeliness and good quality conversations",
+      "summary": "Plans the use of his or her time. Concentrates his or her efforts on priorities.",
       "signals": [
-        "Practises active listening and suspension of attention",
-        "Ensures stakeholders are aware of current blockers",
-        "Chooses the appropriate tools for accurate and timely communication",
       ],
       "examples": [
-        "Received and integrated critical feedback positively",
-        "Created cross-team Slack channel for payments work",
-        "Spoke to domain experts before writing spec",
       ],
     }, {
-      "summary": "Proactively shares information, actively solicits feedback, and facilitates communication for multiple stakeholders",
+      "summary": "Uses time effectively and efficiently. Concentrates efforts on the most important priorities.",
       "signals": [
-        "Resolves communication difficulties between others",
-        "Anticipates and shares schedule deviations in plenty of time",
-        "Manages project stakeholder expectations effectively",
       ],
       "examples": [
-        "Directed team response effectively during outages",
-        "Gave a substantial Eng All Hands presentation on React",
-        "Gave notice of upcoming related work in Eng Briefing",
       ],
     }, {
-      "summary": "Communicates complex ideas skillfully and with nuance, and establishes alignment within the wider organization",
+      "summary": "Places a high value on own time and plans tasks accordingly. Makes quality time for the most important priorities.",
       "signals": [
-        "Communicates project risk and tradeoffs skillfully and with nuance",
-        "Contextualizes and clarifies ambiguous direction and strategy for others",
-        "Negotiates resourcing compromises with other teams",
       ],
       "examples": [
-        "Lead off-site workshop on interviewing",
-        "Wrote Medium's growth framework and rationale",
-        "Aligned the entire organization around claps",
       ],
     }, {
-      "summary": "Influences outcomes at the highest level, moves beyond mere broadcasting, and sets best practices for others",
+      "summary": "Uses time and energy efficiently for self and others.",
       "signals": [
-        "Defines processes for clear communication for the entire team",
-        "Shares the right amount of information with the right people, at the right time",
-        "Develops and delivers plans to execs, the board, and outside investors",
       ],
       "examples": [
-        "Organized half year check-in company offsite",
-        "Created the communication plan for a large organizational change",
-        "Presented to the board about key company metrics and projects",
       ],
     }],
   },
 
-  "CRAFT": {
-    "displayName": "Craft",
-    "category": "B",
-    "description": "Embodies and promotes practices to ensure excellent quality products and services",
+  "EFFECTIVE_COMMUNICATION": {
+    "displayName": "Effective Communication",
+    "category": "C",
+    "description": "The ability to actively listen and to communicate clearly with others in a straightforward way	",
     "milestones": [{
-      "summary": "Delivers consistently good quality work",
+      "summary": "Communicates effectively to close stakeholders when called upon, and incorporates constructive feedback	",
       "signals": [
-        "Tests new code thoroughly, both locally, and in production once shipped",
-        "Writes tests for every new feature and bug fix",
-        "Writes clear comments and documentation",
       ],
       "examples": [
-        "Caught a bug on Hatch before it went live",
-        "Landed non-trivial PR with no caretaker comments",
-        "Wrote hermetic tests for the happy and sad cases",
       ],
     }, {
-      "summary": "Increases the robustness and reliability of codebases, and devotes time to polishing products and systems",
+      "summary": "Communicates appropriately, focusing on timeliness and good quality conversations	",
       "signals": [
-        "Refactors existing code to make it more testable",
-        "Adds tests for uncovered areas",
-        "Deletes unnecessary code and deprecates proactively when safe to do so",
       ],
       "examples": [
-        "Requested tests for a PR when acting as reviewer",
-        "Reduced the number of zelda fitzgerald exceptions",
-        "Fixed a TODO for someone else in the codebase",
       ],
     }, {
-      "summary": "Improves others' ability to deliver great quality work",
+      "summary": "Proactively shares information, actively solicits feedback, and facilitates communication for multiple stakeholder	",
       "signals": [
-        "Implements systems that enable better testing",
-        "Gives thoughtful code reviews as a domain expert",
-        "Adds tooling to improve code quality",
       ],
       "examples": [
-        "Improved PRB to run the same volume of tests faster",
-        "Simplified hermetic test data modification",
-        "Created fixture system for visual quality",
       ],
     }, {
-      "summary": "Advocates for and models great quality with proactive actions, and tackles difficult and subtle system issues",
+      "summary": "Communicates complex ideas skillfully and with nuance, and establishes alignment within the wider organization	",
       "signals": [
-        "Builds systems so as to eliminate entire classes of programmer error",
-        "Focuses the team on quality with regular reminders",
-        "Coordinates Watch priorities and projects",
       ],
       "examples": [
-        "Added code coverage reporting to iOS CI pipeline",
-        "Iterated repeatedly to develop Medium's underlines solution",
-        "Defined and oversaw plan for closing Heartbleed vulnerability",
       ],
     }, {
-      "summary": "Enables and encourages the entire organization to make quality a central part of the development process",
+      "summary": "Influences outcomes at the highest level, moves beyond mere broadcasting, and sets best practices for others	",
       "signals": [
-        "Defines policies for the engineering org that encourage quality work",
-        "Identifies and eliminates single points of failure throughout the organization",
-        "Secures time and resources from execs to support great quality",
       ],
       "examples": [
-        "Negotiated resources for Fix-It week with exec team",
-        "Instituted and ensured success of a 20% time policy",
-        "Started The Watch",
+      ],
+    }],
+  },
+
+  "CONFLICT_RESOULTION": {
+    "displayName": "Conflict Resolution",
+    "category": "C",
+    "description": "Involves having the ability to help others through emotional or tense situations, tactfully bring disagreements into the open, and define solutions that everyone can endorse. Leaders who take time to understand different perspectives work toward finding a common ground on which everyone can agree. They acknowledge the views of all sides, while redirecting the energy toward a shared ideal or an agreeable resolution.",
+    "milestones": [{
+      "summary": "Identifies conflict situations and is aware of some actions that must be taken.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Identifies conflict sitations and is able to articulate some solutions.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Solve conflicts successfully and is able to propose imparcial solutions.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is proactive, sees the problem ahead and is accepted as an impartial part for others.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is capable of solving complex conflict situations and able to anticipate them. Is also able to trace a plan seen fair and respected by parties involve.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "SELF_MANAGEMENT": {
+    "displayName": "Self Management	",
+    "category": "C",
+    "description": "Must be able to use introspection, self-evaluation and self-management techniques in order to pro-actively and continuously improve own behavior and performance.",
+    "milestones": [{
+      "summary": "Able to control emotions and respect others task and responsibilities.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Deliberately puts emotions aside and is able to keep calm in certain situations asking for help when needed.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Works with a long plan mentallity, not only able to think in themselves but in the team as whole to solve complex situations. Is permeable to ideas and constrcutive feedback to get better otcomes.",
+      "signals": [
+      ],
+      "examples": [
       ],
     }],
   },
 
   "INITIATIVE": {
     "displayName": "Initiative",
-    "category": "B",
-    "description": "Challenges the status quo and effects positive organizational change outside of mandated work",
+    "category": "C",
+    "description": "Proactively identifies ways to contribute to Novum’s goals and mission; achieves results without needing reminders from others; identifies and takes action to address problems and opportunities.",
     "milestones": [{
-      "summary": "Identifies opportunities for organizational change or product improvements",
+      "summary": "Identifies opportunities for organizational change or product improvements.",
       "signals": [
-        "Writes Hatch posts about improvement opportunities",
-        "Raises meaningful tensions in tactical meetings",
-        "Asks leadership team probing questions at FAM",
       ],
       "examples": [
-        "Wrote about problems with TTR on Hatch",
-        "Wrote about content policy problems on Hatch",
-        "Reported a site issue in Github",
       ],
     }, {
-      "summary": "Causes change to positively impact a few individuals or minor improvement to an existing product or service",
+      "summary": "Causes change to positively impact a few individuals or minor improvement to an existing product or service.",
       "signals": [
-        "Picks bugs off the backlog proactively when blocked elsewhere",
-        "Makes design quality improvements unprompted",
-        "Takes on trust and safety tasks proactively when blocked elsewhere",
       ],
       "examples": [
-        "Advocated on own behalf for a change in role",
-        "Implemented flow typing for promises",
-        "Audited web client performance in Chrome and proposed fixes",
       ],
     }, {
-      "summary": "Causes change to positively impact an entire team or instigates a minor feature or service",
+      "summary": "Causes change to positively impact an entire team or instigates a minor feature or service.",
       "signals": [
-        "Demonstrates concepts proactively with prototypes",
-        "Fixes complicated bugs outside of regular domain",
-        "Takes ownership of systems that nobody owns or wants",
       ],
       "examples": [
-        "Defined style guide to resolve style arguments",
-        "Proposed and implemented at-mentions prototype",
-        "Implemented video for Android independently, unprompted",
       ],
     }, {
-      "summary": "Effects change that has a substantial positive impact on the engineering organization or a major product impact",
+      "summary": "Effects change that has a substantial positive impact on the organization or a major product impact.",
       "signals": [
-        "Champions and pioneers new technologies to solve new classes of problem",
-        "Exemplifies grit and determination in the face of persistent obstacles",
-        "Instigates major new features, services, or architectures",
       ],
       "examples": [
-        "Created the interviewing rubric and booklet",
-        "Implemented and secured support for native login",
-        "Migrated medium2 to mono repo and bazel",
       ],
     }, {
-      "summary": "Effects change that has a substantial positive impact on the whole company",
+      "summary": "Effects change that has a substantial positive impact on the whole company.",
       "signals": [
-        "Creates a new function to solve systemic issues",
-        "Galvanizes the entire company and garners buy in for a new strategy",
-        "Changes complex organizational processes",
       ],
       "examples": [
-        "Migrated the organization from Holacracy",
-        "Built Medium Android prototype and convinced execs to fund it",
-        "Convinced leadership and engineering org to move to Medium Lite architecture",
       ],
     }],
   },
 
-  "CAREER_DEVELOPMENT": {
-    "displayName": "Career development",
+  "FLEXIBILITY": {
+    "displayName": "Flexibility / Dealing with Ambiguity",
     "category": "C",
-    "description": "Provides strategic support to engineers to help them build the career they want",
+    "description": "Can effectively cope with change; can shift gears comfortably; can decide and act without having the total picture; can comfortably handle risk and uncertainty.",
     "milestones": [{
-      "summary": "Gives insight into opportunities and helps identify individuals' strengths and weaknesses",
+      "summary": "Assumes uncertainty and is flexible to agree new terms and actions.",
       "signals": [
-        "Advocates on behalf and in defense of a group member",
-        "Shares opportunities for improvements and recognises achievements",
-        "Explains appropriate available industry paths",
       ],
       "examples": [
-        "Collected and delivered feedback",
-        "Discussed career options and areas of interest informally",
-        "Hosted a Floodgate Academy intern",
       ],
     }, {
-      "summary": "Formally supports and advocates for one person and provides tools to help them solve career problems",
+      "summary": "Given a new situation and learning from it, adapts projects in order to succeed.",
       "signals": [
-        "Ensure a group member has an appropriate role on their team",
-        "Offers effective career advice to group members, without being prescriptive",
-        "Creates space for people to talk through challenges",
       ],
       "examples": [
-        "Set up and attended regular, constructive 1:1s",
-        "Provided coaching on how to have difficult conversations",
-        "Taught group members the GROW model",
       ],
     }, {
-      "summary": "Inspires and retains a small group of people and actively pushes them to stretch themselves",
+      "summary": "Is able to implement changes and iterate constantly while changes happen, reacting quickly.",
       "signals": [
-        "Discusses paths, and creates plans for personal and professional growth",
-        "Advocates to align people with appropriate roles within organization",
-        "Works with team leads to elevate emerging leaders",
       ],
       "examples": [
-        "Reviewed individual group member progression every 6 weeks",
-        "Suggested appropriate group member for Tech Lead position",
-        "Arranged a requested switch of discipline for a group member",
       ],
     }, {
-      "summary": "Manages interactions and processes between groups, promoting best practices and setting a positive example",
+      "summary": "",
       "signals": [
-        "Manages team transitions smoothly, respecting team and individual needs",
-        "Develops best practices for conflict resolution",
-        "Ensures all group members' roles are meeting their career needs",
       ],
       "examples": [
-        "Completed training on situational leadership",
-        "Built a resourcing plan based on company, team, and individual goals",
-        "Prevented regretted attrition with intentional, targeted intervention",
       ],
     }, {
-      "summary": "Supports the development of a signficant part of the engineering org, and widely viewed as a trusted advisor",
+      "summary": "Is able to develop a successful plan in unexpected and major situations, establishing new priorities and path to follow.",
       "signals": [
-        "Supports and develops senior leaders",
-        "Identified leadership training opportunities for senior leadership",
-        "Pushes everyone to be as good as they can be, with empathy",
       ],
       "examples": [
-        "Provided coaching to group leads",
-        "Devised Pathwise curriculum for group leads",
-        "Advocated to execs for engineer development resources and programs",
       ],
     }],
   },
 
-  "ORG_DESIGN": {
-    "displayName": "Org design",
+  "CREATIVE_THINKING": {
+    "displayName": "Creativity Thinking	",
     "category": "C",
-    "description": "Defines processes and structures that enables the strong growth and execution of a diverse eng organization",
+    "description": "Discovering new opportunities and solutions for problems by looking beyond current practices and using innovative thinking.",
     "milestones": [{
-      "summary": "Respects and participates in processes, giving meaningful feedback to help the organization improve",
+      "summary": "Proposes new ideas within his/her role, taking his/her experience as a tool.",
       "signals": [
-        "Reflects on meetings that leave them inspired or frustrated",
-        "Teaches others about existing processes",
-        "Actively participates and makes contributions within organizational processes",
       ],
       "examples": [
-        "Facilitated effective tactical meeting with empathy",
-        "Explained tactical meeting format to a new hire",
-        "Provided feedback on sprint planning meeting",
       ],
     }, {
-      "summary": "Identifies opportunities to improve existing processes and makes changes that positively affect the local team",
+      "summary": "Generates innovative ideas within his/her role.",
       "signals": [
-        "Defines meeting structure and cadence that meets team needs",
-        "Engages in organizational systems thinking",
-        "Advocates for improved diversity and inclusion, and proposes ideas to help",
       ],
       "examples": [
-        "Defined Frankenmeeting structure for small team",
-        "Improved Watch on-call rotation scheduling",
-        "Defined standard channels for inter-team communication",
       ],
     }, {
-      "summary": "Develops processes to solve ongoing organizational problems",
+      "summary": "Creates many new innovative ideas and is able to relate different unnconected experiences to create them.",
       "signals": [
-        "Creates programs that meaningfully improve organizational diversity",
-        "Solves long-standing organizational problems",
-        "Reallocates resources to meet organizational needs",
       ],
       "examples": [
-        "Developed baseline team templates for consistency",
-        "Created bug-rotation program to address ongoing quality issues",
-        "Defined Guilds manifesto and charter",
       ],
     }, {
-      "summary": "Thinks deeply about organizational issues and identifies hidden dynamics that contribute to them",
+      "summary": "Thinks out of the box and creates new ideas and ways of  working without fear of failure.",
       "signals": [
-        "Evaluates incentive structures and their effect on execution",
-        "Analyzes existing processes for bias and shortfall",
-        "Ties abstract concerns to concrete organizational actions or norms",
       ],
       "examples": [
-        "Connected mobile recruiting difficulties to focus on excellence",
-        "Raised leadership level change discrepancies",
-        "Analyzed the hiring rubric for false negative potential",
       ],
     }, {
-      "summary": "Leads initiatives to address issues stemming from hidden dynamics and company norms",
+      "summary": "Proposes, constantly, unique ideas using deep analysis crossing ideas and processes form a variety of sources.",
       "signals": [
-        "Builds programs to train leadership in desired skills",
-        "Creates new structures that provide unique growth opportunities",
-        "Leads planning and communication for reorgs",
       ],
       "examples": [
-        "Lead efforts to increase number of mobile engineers",
-        "Directed resources to meaningfully improve diversity at all levels",
-        "Built the growth framework rubric",
       ],
     }],
   },
 
-  "WELLBEING": {
-    "displayName": "Wellbeing",
-    "category": "C",
-    "description": "Supports the emotional well-being of group members in difficult times, and celebrates their successes",
+  /*
+   * General - Mentoring
+   */
+
+  "MOTIVATING_OTHERS": {
+    "displayName": "Motivating Others",
+    "category": "D",
+    "description": "Creates a climate in which people want to do their best; can assess each person’s strengths and use them to get the best out of him or her; promotes confidence and optimistic attitudes; is someone people like working for and with.",
     "milestones": [{
-      "summary": "Uses tools and processes to help ensure colleagues are healthy and happy",
+      "summary": "Promotes a positive working enviroment.",
       "signals": [
-        "Keeps confidences unless legally or morally obliged to do otherwise",
-        "Applies the reasonable person principle to others",
-        "Avoids blame and focuses on positive change",
       ],
       "examples": [
-        "Ensured group members were taking enough vacation",
-        "Put themself in another's shoes to understand their perspective",
-        "Checked in with colleague showing signs of burnout",
       ],
     }, {
-      "summary": "Creates a positive, supportive, engaging team environment for group members",
+      "summary": "Able to motivate some individuals within the organization.",
       "signals": [
-        "Sheds light on other experiences to build empathy and compassion",
-        "Validates ongoing work and sustains motivation",
-        "Proposes solutions when teams get bogged down or lose momentum",
       ],
       "examples": [
-        "Coordinated a small celebration for a project launch",
-        "Connected tedious A|B testing project with overall company goals",
-        "Noted a team without a recent win and suggested some easy quick wins",
       ],
     }, {
-      "summary": "Manages expectations across peers, leads in the org, promotes calm, and prevents consensus building",
+      "summary": "Motivates wider audiences within his area of influence.",
       "signals": [
-        "Trains group members to separate stimulus from response",
-        "Maintains a pulse on individual and team morale",
-        "Helps group members approach problems with curiosity",
       ],
       "examples": [
-        "Completed training on transference and counter transference",
-        "Completed training on compromise and negotiation techniques",
-        "Reframed a problem as a challenge, instead of a barrier, when appropriate",
       ],
     }, {
-      "summary": "Advocates for the needs of teams and group members, and proactively works to calm the organization",
+      "summary": "Motivates people and organizational units.",
       "signals": [
-        "Ensures team environments are safe and inclusive, proactively",
-        "Grounds group member anxieties in reality",
-        "Tracks team retention actively and proposes solutions to strengthen it",
       ],
       "examples": [
-        "Relieved org tension around product direction by providing extra context",
-        "Encouraged group members to focus on what they can control",
-        "Guided people through complex organizational change",
       ],
     }, {
-      "summary": "Manages narratives, channels negativity into inspiration and motivation, and protects the entire team",
+      "summary": "Motivates the entire organization.",
       "signals": [
-        "Recognizes and points out narratives when appropriate",
-        "Works to reshape narratives from victimization to ownership",
-        "Increases the psychological safety of the entire team",
       ],
       "examples": [
-        "Converted group member from a problem haver to a problem solver",
-        "Challenged false narrative and redirected to compassion and empathy",
-        "Cultivated and championed a culture of empathy within the entire team",
+      ],
+    }],
+  },
+
+  "DEVELOPING_OTHERS": {
+    "displayName": "Developing Others	",
+    "category": "D",
+    "description": "The ability to retain talent and drive higher levels of employee engagement. Developing Others provides a supportive environment for enhanced performance and professional growth. It is critical to retaining talent, driving higher levels of employee engagement, and ultimately impacts an organization’s success. To develop others you need to act as a trusted advisor, acts on an independent opinion on client needs, problems/opportunities, and possibilities for implementation.",
+    "milestones": [{
+      "summary": "Gives insight into opportunities and helps identify individuals' strengths and weaknesses.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Formally supports and advocates for one person and provides tools to help them solve career problems.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Inspires and retains a small group of people and actively pushes them to stretch themselves.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Manages interactions and processes between groups, promoting best practices and setting a positive example.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Supports the development of a signficant part of the engineering org, and widely viewed as a trusted advisor.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "TEAMWORK": {
+    "displayName": "Teamwork",
+    "category": "D",
+    "description": "The ability to motivate, develop and build a team to achieve the highest levels of performance.",
+    "milestones": [{
+      "summary": "Uses tools and processes to help ensure colleagues are healthy and happy.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Creates a positive, supportive, engaging team environment for group members	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Manages expectations across peers, leads in the org, promotes calm, and prevents consensus building.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Advocates for the needs of teams and group members, and proactively works to calm the organization.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Manages narratives, channels negativity into inspiration and motivation, and protects the entire team.",
+      "signals": [
+      ],
+      "examples": [
       ],
     }],
   },
 
   "ACCOMPLISHMENT": {
     "displayName": "Accomplishment",
-    "category": "C",
-    "description": "Inspires day to day excellence, maximises potential and effectively resolves performance issues with compassion",
+    "category": "D",
+    "description": "Inspires day to day excellence, maximizes potential and effectively resolves performance issues with compassion.",
     "milestones": [{
-      "summary": "Helps individuals identify blockers and helps them identify next steps for resolution",
+      "summary": "Helps individuals identify blockers and helps them identify next steps for resolution.",
       "signals": [
-        "Notices when someone is stuck and reaches out",
-        "Helps others break down problems into feasible, tangible next steps",
-        "Talks through problems non-judgmentally",
       ],
       "examples": [
-        "Completed training on diagnosing problems",
-        "Unblocked a group member",
-        "Reinforces and affirms positive feedback for good work",
       ],
     }, {
-      "summary": "Helps individuals resolve difficult performance issues, with insight, compassion, and skill",
+      "summary": "Helps individuals resolve difficult performance issues, with insight, compassion, and skill.",
       "signals": [
-        "Gathers context outside the immediate problem",
-        "Recognizes issues within local environment and suggests change",
-        "Works to encourage ownership of actions and responsibilities",
       ],
       "examples": [
-        "Completed training on decision making",
-        "Convinced a group member to solve a problem directly, rather than doing it for them",
-        "Gave honest feedback about poor performance, with compassion",
       ],
     }, {
-      "summary": "Intervenes in long-standing performance issues with targeted behavior change or performance plans",
+      "summary": "Intervenes in long-standing performance issues with targeted behavior change or performance plans.",
       "signals": [
-        "Aggregates signals of poor performance and creates process for improvement",
-        "Investigates motivation and externalities for consistent poor performance",
-        "Puts together comprehensive, achievable performance plans",
       ],
       "examples": [
-        "Worked with group member to address persistent communication failures",
-        "Arranged a transfer to another team, resulting in improved performance",
-        "Managed group member closely to maximise chances of PIP success",
       ],
     }, {
-      "summary": "Mediates escalated situations, empowers underperforming teams, and resolves conflict",
+      "summary": "Mediates escalated situations, empowers underperforming teams, and resolves conflict.",
       "signals": [
-        "Recognizes heightened situations and toxic or aggressive interactions",
-        "Inserts themself into conflict where appropriate to calm and mediate",
-        "Encourages open dialog and builds trust between parties in conflict",
       ],
       "examples": [
-        "Empowered a team to drive forward amidst uncertainty",
-        "Protected team from externalities so they could focus on goals",
-        "Mediated sit-down between team members to address tension",
       ],
     }, {
-      "summary": "Resolves complex organizational dysfunction, or persistent conflict at senior levels",
+      "summary": "Resolves complex organizational dysfunction, or persistent conflict at senior levels.",
       "signals": [
-        "Takes control of dysfunctional teams to organise chaos",
-        "Repairs broken team dynamics and builds harmony",
-        "Presides over a well-oiled team of teams",
       ],
       "examples": [
-        "Turned around the performance of a problematic team",
-        "De-escalated serious tensions between teams",
-        "Rebuilt trust between senior team leads",
       ],
     }],
   },
 
-  "MENTORSHIP": {
-    "displayName": "Mentorship",
-    "category": "D",
-    "description": "Provides support to colleagues, spreads knowledge, and develops the team outside formal reporting structures",
-    "milestones": [{
-      "summary": "Informally mentors individuals in an ad-hoc way, supports new hires, and conveys institutional knowledge",
-      "signals": [
-        "Makes themself available for informal support and advice",
-        "Acts as sounding board for peers and more junior members",
-        "Provides sound advice when asked",
-      ],
-      "examples": [
-        "Acted as an onboarding buddy",
-        "Paired with an engineer to help them with an unfamiliar area",
-        "Helped a colleague understand their feelings",
-      ],
-    }, {
-      "summary": "Mentors people proactively, and guides people to realizations rather than providing the answer",
-      "signals": [
-        "Takes time to explain concepts and best practices",
-        "Asks questions to illuminate concepts, rather than stating them",
-        "Allows others to lead efforts when it will help their development",
-      ],
-      "examples": [
-        "Shared interesting article with a team member to help with their growth",
-        "Offered unprompted feedback to help growth, with empathy",
-        "Lead from behind to support someone new to a leadership role",
-      ],
-    }, {
-      "summary": "Teaches small groups of engineers and contributes to Medium's shared knowledge base",
-      "signals": [
-        "Avoids siloing information when it can be usefully shared with others",
-        "Works to increase the bus factor of systems",
-        "Finds tools that work best for a team member's personality",
-      ],
-      "examples": [
-        "Gave a brown bag presentation on payments",
-        "Wrote Hatch post on avoiding RDS backfill issues",
-        "Wrote Medium-U content module",
-      ],
-    }, {
-      "summary": "Encourages people to mentor each other, and creates ways for them to do so",
-      "signals": [
-        "Defines an entire curriculum for a discipline",
-        "Draws positive attention to well-modeled mentor and teaching behaviours",
-        "Creates brown bag series and lines up speakers",
-      ],
-      "examples": [
-        "Created and lead Medium's Women in Eng group",
-        "Organized an Eng All Hands with an outside speaker",
-        "Designed and taught web client guild curriculum",
-      ],
-    }, {
-      "summary": "Instills and promotes a culture of learning and development within the team",
-      "signals": [
-        "Sets incentive structures to recognise and reward mentorship",
-        "Empowers team members to develop themselves",
-        "Role models productive and healthy mentor relationships",
-      ],
-      "examples": [
-        "Instituted the professional education budget for engineers",
-        "Mentored mentors",
-        "Started the eng advisor program and lined up external mentors",
-      ],
-    }],
-  },
-
-  "EVANGELISM": {
-    "displayName": "Evangelism",
-    "category": "D",
-    "description": "Promotes Medium to the outside world and establishes it as an attractive and thoughtful place to work",
-    "milestones": [{
-      "summary": "Represents Medium well externally, and influences individuals positively",
-      "signals": [
-        "Shares personal and organizational successes with their network",
-        "Attends Medium-hosted events and talks with guests",
-        "Communicates genuine and honest excitement about their work externally",
-      ],
-      "examples": [
-        "Shared a Medium product launch post on Facebook",
-        "Acted as a guide for a non-friend visitor to the office",
-        "Supported PR efforts by giving a quote or having a photo taken",
-      ],
-    }, {
-      "summary": "Participates more centrally in small events, and takes simple actions that positively influence groups of people",
-      "signals": [
-        "Takes meaningful action to introduce people to Medium",
-        "Joined public Slack group and represented Medium appropriately, and well",
-        "Organizes positive small- or medium-sized events that bring people to Medium",
-      ],
-      "examples": [
-        "Volunteered as a helper for CODE2040 writing workshop",
-        "Organized a short tour of the office by college students",
-        "Talked at a Women Who Code event hosted at Medium",
-      ],
-    }, {
-      "summary": "Works hard to positively influence large groups of people on their views of Medium",
-      "signals": [
-        "Mentors or participates in a high visibility way in an external organization",
-        "Builds fruitful partnerships with external organizations",
-        "Writes blog posts about Medium that receive moderate traffic",
-      ],
-      "examples": [
-        "Represented Medium on a panel at a conference of industry experts",
-        "Established close ties with Creative Commons",
-        "Built a durable, long-standing relationship with Code2040",
-      ],
-    }, {
-      "summary": "Establishes Medium as an great, innovative company and workplace to the whole industry",
-      "signals": [
-        "Establishes themself as an industry thought leader who attracts talent",
-        "Publishes material about Medium's organizational or technical innovations",
-        "Leverages significant following to evangelise Medium",
-      ],
-      "examples": [
-        "Published a paper on Medium technology in a peer-reviewed journal",
-        "Authored joint-press release with EFF on DNT",
-        "Published “Why Content Editable Is Terrible” on the Medium engineering blog",
-      ],
-    }, {
-      "summary": "Introduces Medium in a positive light to a wider audience outside the industry",
-      "signals": [
-        "Delivers key messages to broad, mainstream audiences",
-        "Influences people with large audiences to talk about Medium positively",
-        "Drives recognition and adoption of Medium in significant numbers",
-      ],
-      "examples": [
-        "Published or interviewed in a mainstream newspaper or website outside tech",
-        "Keynoted a conference with international attention",
-        "Represented Medium in national televised media",
-      ],
-    }],
-  },
-
-  "RECRUITING": {
-    "displayName": "Recruiting",
-    "category": "D",
-    "description": "Strengthens Medium's team by bringing in excellent staff members",
-    "milestones": [{
-      "summary": "Brings new candidates into the pipeline and understands how to evaluate candidates at Medium",
-      "signals": [
-        "Reviews existing network for hiring leads regularly",
-        "Shadows interviews to gain familiarity with process",
-        "Reviews current job postings regularly",
-      ],
-      "examples": [
-        "Completed interview calibration",
-        "Set up casual sessions to practice asking questions",
-        "Referred appropriate individuals for open positions",
-      ],
-    }, {
-      "summary": "Interviews regularly, helps the team make meaningful hiring decisions, and helps build a diverse pipeline",
-      "signals": [
-        "Uses interview rubric to provide clear, objective feedback on candidates",
-        "Interviews candidates with empathy and treats them all with equal respect",
-        "Researches approaches for sourcing candidates and diversifying hiring",
-      ],
-      "examples": [
-        "Added observable evidence for every rating",
-        "Started a monthly brunch for candidates to meet Medium employees",
-        "Tested a new service for quality and diversity of candidates",
-      ],
-    }, {
-      "summary": "Maintains and strengthens the integrity of the current process, and regularly brings in great candidates",
-      "signals": [
-        "Teaches new interviewers how to interview with empathy",
-        "Models great interview technique and feedback when shadowed",
-        "Reverse shadows trainees and helps calibrate their feedback",
-      ],
-      "examples": [
-        "Wrote new interview question which meets our question quality criteria",
-        "Brought candidates into our pipeline proactively, with a high conversion rate",
-        "Proposed useful, tangible improvements to the interview process",
-      ],
-    }, {
-      "summary": "Actively contributes to and leads hiring decisions, and goes to great lengths to source great candidates",
-      "signals": [
-        "Documents subtle cues in interviews that indicate values alignment",
-        "Makes hiring decisions, resolving discrepancies between conflicting reports",
-        "Top-grades candidates and teases out character traits",
-      ],
-      "examples": [
-        "Planned engineering summit on interview process and training",
-        "Organized and lead Medium's presence at a recruitment fair",
-        "Started CODE2040 internship program",
-      ],
-    }, {
-      "summary": "Sets recruitment strategy, invests in long-term relationships for critical roles, and recruits at scale",
-      "signals": [
-        "Sets the tone, policy and goals around building a diverse, high-quality team",
-        "Identifies and brings in promising acquisitions",
-        "Tracks industry activity, identifying opportunities for critical roles",
-      ],
-      "examples": [
-        "Talked with a senior candidate over many months to fill a critical role",
-        "Organized efforts around convincing acquired engineers to join and stay",
-        "Set goals, then tracked and reported metrics on team demographics over time",
-      ],
-    }],
-  },
-
-  "COMMUNITY": {
-    "displayName": "Community",
-    "category": "D",
-    "description": "Builds community internally, gives of themself to the team, and champions and extols company values",
-    "milestones": [{
-      "summary": "Is available and present on current teams, and works to contribute positively to company culture",
-      "signals": [
-        "Participates in team activities and offsites",
-        "Treats colleagues and clients with respect",
-        "Joins groups or committees outside regular duties",
-      ],
-      "examples": [
-        "Joined and actively participated in the web client guild",
-        "Brought a small gift back from vacation for the team",
-        "Wrote entertaining and informative Prod Ops writeups on Hatch",
-      ],
-    }, {
-      "summary": "Steps up, builds connectedness, and takes concrete actions to promote an inclusive culture",
-      "signals": [
-        "Makes space for others to participate",
-        "Collaborates with other engineers outside direct responsibilities",
-        "Finds ways to ramp up and engage new hires quickly",
-      ],
-      "examples": [
-        "Created onboarding bingo",
-        "Brought shy and introverted people into a dominant conversation",
-        "Volunteered as secretary for a team",
-      ],
-    }, {
-      "summary": "Contributes to improving team relatedness, and helps build a culture of lending support",
-      "signals": [
-        "Takes on additional Watch shifts at short notice",
-        "Pitches in to help other teams hit deadlines, without missing own deadlines",
-        "Uses position to raise difficult issues on someone's behalf",
-      ],
-      "examples": [
-        "Lead Watch cycles with little support while still contributing to projects",
-        "Started and drove the LGBTQIA ERG",
-        "Stayed positive and improved team morale during period after layoffs",
-      ],
-    }, {
-      "summary": "Exemplifies selflessness for the team without compromising responsibilities, and lifts everyone up",
-      "signals": [
-        "Goes above and beyond on the Watch, serving the team without complaint",
-        "Implements concrete programs to signficantly improve team inclusivity",
-        "Takes on large amounts of tedious grunt work for the team without being asked",
-      ],
-      "examples": [
-        "Devoted large amount of time to helping outside direct responsibilities",
-        "Refactored hundreds of legacy Shepherd nodes",
-        "Acted as sole maintainer of Boxen for years",
-      ],
-    }, {
-      "summary": "Lives the company values, guards positive culture, and defines policies that support relatedness between teams",
-      "signals": [
-        "Brings separate teams together to build relatedness",
-        "Holds individuals, teams, and leadership accountable to Medium's values",
-        "Sets the tone, policy, and goals around maintaining an inclusive company",
-      ],
-      "examples": [
-        "Organized wine and olive tasting offsite to Napa for the whole engineering org",
-        "Devised, delivered and acted on findings from an engineer happiness survey",
-        "Challenged and corrected exclusionary behaviour or policies",
-      ],
-    }],
-  },
 }
 
 export const trackIds: TrackId[] = Object.keys(tracks)
+
+export const milestones = [0, 1, 2, 3, 4, 5]
+
+export const milestoneToPoints = (milestone: Milestone): number => {
+  switch (milestone) {
+    case 0: return 0
+    case 1: return 1
+    case 2: return 3
+    case 3: return 6
+    case 4: return 12
+    case 5: return 20
+    default: return 0
+  }
+}
+
+export const maxLevel = milestoneToPoints(milestones[milestones.length - 1]) * trackIds.length
+
+export const pointsToLevels = {
+  '0': '1.1',
+  '15': '1.2',
+  '30': '1.3',
+  '45': '2.1',
+  '65': '2.2',
+  '85': '2.3',
+  '105': '3.1',
+  '125': '3.2',
+  '145': '3.3',
+  '170': '4.1',
+  '195': '4.2',
+  '220': '4.3',
+  '265': '5.1',
+  '325': '5.2',
+  '400': '5.3',
+}
+
 
 export const categoryIds: Set<string> = trackIds.reduce((set, trackId) => {
   set.add(tracks[trackId].category)
@@ -1193,20 +1020,20 @@ export const categoryColorScale = d3.scaleOrdinal()
   .range(['#00abc2', '#428af6', '#e1439f', '#e54552'])
 
 export const titles = [
-  {label: 'Engineer I', minPoints: 0, maxPoints: 16},
-  {label: 'Engineer II', minPoints: 17, maxPoints: 35},
-  {label: 'Senior Engineer', minPoints: 36, maxPoints: 57},
-  {label: 'Group Lead', minPoints: 36, maxPoints: 57},
-  {label: 'Staff Engineer', minPoints: 58, maxPoints: 89},
-  {label: 'Senior Group Lead', minPoints: 58, maxPoints: 89},
-  {label: 'Principal Engineer', minPoints: 90},
-  {label: 'Director of Engineering', minPoints: 90}
+  { label: 'Engineer I', minPoints: 0, maxPoints: 45 },
+  { label: 'Engineer II', minPoints: 46, maxPoints: 105 },
+  { label: 'Senior Engineer', minPoints: 106, maxPoints: 170 },
+  { label: 'Group Lead', minPoints: 106, maxPoints: 170 },
+  { label: 'Staff Engineer', minPoints: 171, maxPoints: 265 },
+  { label: 'Senior Group Lead', minPoints: 171, maxPoints: 265 },
+  { label: 'Principal Engineer', minPoints: 266 },
+  { label: 'Director of Engineering', minPoints: 266 }
 ]
 
 export const eligibleTitles = (milestoneMap: MilestoneMap): string[] => {
   const totalPoints = totalPointsFromMilestoneMap(milestoneMap)
 
   return titles.filter(title => (title.minPoints === undefined || totalPoints >= title.minPoints)
-                             && (title.maxPoints === undefined || totalPoints <= title.maxPoints))
+    && (title.maxPoints === undefined || totalPoints <= title.maxPoints))
     .map(title => title.label)
 }

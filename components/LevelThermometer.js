@@ -1,7 +1,7 @@
 // @flow
 
 import * as d3 from 'd3'
-import { pointsToLevels, categoryPointsFromMilestoneMap, categoryColorScale, categoryIds } from '../constants'
+import { pointsToLevels, categoryPointsFromMilestoneMap, categoryColorScale, categoryIds, maxLevel } from '../constants'
 import React from 'react'
 import type { MilestoneMap } from '../constants'
 
@@ -29,7 +29,7 @@ class LevelThermometer extends React.Component<Props> {
     super(props)
 
     this.pointScale = d3.scaleLinear()
-      .domain([0, 135])
+      .domain([0, maxLevel])
       .rangeRound([0, width - margins.left - margins.right]);
 
     this.topAxisFn = d3.axisTop()
@@ -63,12 +63,12 @@ class LevelThermometer extends React.Component<Props> {
 
   rightRoundedRect(x: *, y: *, width: *, height: *, radius: *) {
     return "M" + x + "," + y
-         + "h" + (width - radius)
-         + "a" + radius + "," + radius + " 0 0 1 " + radius + "," + radius
-         + "v" + (height - 2 * radius)
-         + "a" + radius + "," + radius + " 0 0 1 " + -radius + "," + radius
-         + "h" + (radius - width)
-         + "z";
+      + "h" + (width - radius)
+      + "a" + radius + "," + radius + " 0 0 1 " + radius + "," + radius
+      + "v" + (height - 2 * radius)
+      + "a" + radius + "," + radius + " 0 0 1 " + -radius + "," + radius
+      + "h" + (radius - width)
+      + "z";
   }
   render() {
     let categoryPoints = categoryPointsFromMilestoneMap(this.props.milestoneByTrack)
@@ -96,26 +96,26 @@ class LevelThermometer extends React.Component<Props> {
               cumulativePoints += categoryPoint.points
               return (i != lastCategoryIndex ?
                 <rect
-                    key={categoryPoint.categoryId}
-                    x={x}
-                    y={0}
-                    width={width}
-                    height={height - margins.top - margins.bottom}
-                    style={{fill: categoryColorScale(categoryPoint.categoryId), borderRight: "1px solid #000"}}
-                    /> :
+                  key={categoryPoint.categoryId}
+                  x={x}
+                  y={0}
+                  width={width}
+                  height={height - margins.top - margins.bottom}
+                  style={{ fill: categoryColorScale(categoryPoint.categoryId), borderRight: "1px solid #000" }}
+                /> :
                 <path
-                    key={categoryPoint.categoryId}
-                    d={this.rightRoundedRect(x, 0, width, height - margins.top - margins.bottom, 3)}
-                    style={{fill: categoryColorScale(categoryPoint.categoryId)}}
-                    />
+                  key={categoryPoint.categoryId}
+                  d={this.rightRoundedRect(x, 0, width, height - margins.top - margins.bottom, 3)}
+                  style={{ fill: categoryColorScale(categoryPoint.categoryId) }}
+                />
               )
             })}
             <g ref={ref => this.topAxis = ref} className="top-axis"
-                transform={`translate(0, -2)`}
-                />
+              transform={`translate(0, -2)`}
+            />
             <g ref={ref => this.bottomAxis = ref} className="bottom-axis"
-                transform={`translate(0,${height - margins.top - margins.bottom + 1})`}
-                />
+              transform={`translate(0,${height - margins.top - margins.bottom + 1})`}
+            />
           </g>
         </svg>
       </figure>
