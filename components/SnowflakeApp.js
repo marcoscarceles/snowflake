@@ -186,13 +186,15 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
                 onChange={e => this.setState({ name: e.target.value })}
                 placeholder="Name"
               />
-              <TitleSelector
-                milestoneByTrack={this.state.milestoneByTrack}
-                currentTitle={this.state.title}
-                setTitleFn={(title) => this.setTitle(title)} />
             </form>
-            <PointSummaries milestoneByTrack={this.state.milestoneByTrack} />
-            <LevelThermometer milestoneByTrack={this.state.milestoneByTrack} />
+            <h2>Please rate your level of competency on each of the areas below.</h2>
+            <p>If you want more information about each of the competencies, visit our <a href="https://docs.google.com/spreadsheets/d/177yMyIl7Oxahb-iPu3nemjhTJ9sLl-t1svFjgoBaXaw/edit?usp=sharing">Competency Matrix in Google Sheets</a>.</p>
+            <p>Since it’s impossible to accurately assess a level of competency based on a short sentence the following additional resources are provided:</p>
+            <ul>
+              <li>A company wide level impact expectation: All levels are somewhat equivalent among competencies. The impact of an individual performance on the company can be used to steer in doubt between two levels.</li>
+              <li>A set of behaviours expected of someone having reached that level.</li>
+              <li>A set of practices that could (but not necessarily does) demonstrate this level of  competency.</li>
+            </ul>
           </div>
           <div style={{ flex: 0 }}>
             <NightingaleChart
@@ -216,14 +218,14 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
         <div style={{ display: 'flex', paddingBottom: '20px' }}>
           <div style={{ flex: 1 }}>
-            Made with ❤️ by <a href="https://medium.engineering" target="_blank">Medium Eng</a>.
-            Learn about the <a href="https://medium.com/s/engineering-growth-framework" target="_blank">this version of our growth framework</a>
-            {' '}and <a href="https://medium.engineering/engineering-growth-at-medium-4935b3234d25" target="_blank">what we do currently</a>.
+            Made with ❤️ by Novum Eng, based on an original idea from <a href="https://medium.engineering" target="_blank">Medium Eng</a>.
+            Learn about <a href="https://medium.com/s/engineering-growth-framework" target="_blank">their version of this growth framework</a>
+            {' '}and <a href="https://medium.engineering/engineering-growth-at-medium-4935b3234d25" target="_blank">what they do currently</a>.
             Get the <a href="https://github.com/Medium/snowflake" target="_blank">source code</a>.
             Read the <a href="https://medium.com/p/85e078bc15b7" target="_blank">terms of service</a>.
           </div>
         </div>
-      </main>
+      </main >
     )
   }
 
