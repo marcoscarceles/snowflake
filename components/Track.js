@@ -50,15 +50,15 @@ class Track extends React.Component<Props> {
         `}</style>
         <h2>{track.displayName}</h2>
         <p className="track-description">{track.description}</p>
-        <div style={{display: 'flex'}}>
-          <table style={{flex: 0, marginRight: 50}}>
+        <div style={{ display: 'flex' }}>
+          <table style={{ flex: 0, marginRight: 50 }}>
             <tbody>
               {milestones.slice().reverse().map((milestone) => {
                 const isMet = milestone <= currentMilestoneId
                 return (
                   <tr key={milestone}>
                     <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, milestone)}
-                        style={{border: `4px solid ${milestone === currentMilestoneId ? '#000' : isMet ? categoryColorScale(track.category) : '#eee'}`, background: isMet ? categoryColorScale(track.category) : undefined}}>
+                      style={{ border: `4px solid ${milestone === currentMilestoneId ? '#000' : isMet ? categoryColorScale(track.category) : '#eee'}`, background: isMet ? categoryColorScale(track.category) : undefined }}>
                       {milestone}
                     </td>
                   </tr>
@@ -67,7 +67,7 @@ class Track extends React.Component<Props> {
             </tbody>
           </table>
           {currentMilestone ? (
-            <div style={{flex: 1}}>
+            <div style={{ flex: 1 }}>
               <h3>{currentMilestone.summary}</h3>
               <h4>Example behaviors:</h4>
               <ul>
@@ -75,7 +75,7 @@ class Track extends React.Component<Props> {
                   <li key={i}>{signal}</li>
                 ))}
               </ul>
-              <h4>Example tasks:</h4>
+              <h4>Example practices:</h4>
               <ul>
                 {currentMilestone.examples.map((example, i) => (
                   <li key={i}>{example}</li>

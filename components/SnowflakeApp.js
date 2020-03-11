@@ -171,10 +171,11 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
             text-decoration: none;
           }
         `}</style>
-        <div style={{ margin: '19px auto 0', width: 142 }}>
-          <a href="https://medium.com/" target="_blank">
+        <div style={{ margin: '19px auto 0' }}>
+          {/* <a href="https://medium.com/" target="_blank">
             <Wordmark />
-          </a>
+          </a> */}
+          <h1>Novum Engineering Career Framework</h1>
         </div>
         <div style={{ display: 'flex' }}>
           <div style={{ flex: 1 }}>
@@ -184,7 +185,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
                 className="name-input"
                 value={this.state.name}
                 onChange={e => this.setState({ name: e.target.value })}
-                placeholder="Name"
+                placeholder="State your name"
               />
             </form>
             <h2>Please rate your level of competency on each of the areas below.</h2>
