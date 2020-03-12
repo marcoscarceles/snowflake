@@ -196,6 +196,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
               <li>A set of behaviours expected of someone having reached that level.</li>
               <li>A set of practices that could (but not necessarily does) demonstrate this level of  competency.</li>
             </ul>
+            <p style={{ fontWeight: 'bold' }}>After completing your self-evaluation (including your full name above and scoring below), please submit the generated URL to <a href="https://docs.google.com/forms/d/e/1FAIpQLSe19Y43rLSX-5pMOgmxXSJ0TFkAePr-w5r79AQ4hdCcLg4vmg/viewform?usp=sf_link">this form</a>.</p>
           </div>
           <div style={{ flex: 0 }}>
             <NightingaleChart
