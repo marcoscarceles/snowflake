@@ -72,6 +72,40 @@ type Tracks = {
 
 }
 
+
+
+export type Level = {
+  name: String,
+  description: string,
+}
+
+export const levels: Level = { items: [
+  {
+    name: "Level 0",
+    description: "No applicable knowledge",
+  },
+  {
+    name: "Level 1 (Basic)",
+    description: "Has knowledge of the skill and an appreciation of how it is applied in the environment, while is still being able to develop efficiency.",
+  },
+  {
+    name: "Level 2 (Developing)",
+    description: "Applies knowledge and experience of the skill, including tools and techniques, adopting those most appropriate for the environment.",
+  },
+  {
+    name: "Level 3 (Professional) (Impact at your team)",
+    description: "Shares knowledge and experience of the skill with others inside your team becoming a local reference, including tools and techniques, defining those most appropriate one for the environment. They are able to challenge others, including different contexts, where this skill is applied.",
+  },
+  {
+    name: "Level 4 (Advance) (Impact at your area)",
+    description: "Has knowledge and experience in the application of this skill. Is a recognised specialist and advisor in this skill including user needs, generation of ideas, methods, tools and leading or guiding others in best practice inside your area of expertise.",
+  },
+  {
+    name: "Level 5 (Expert) (Impact at your company)",
+    description: "Leads using knowledge and experience in the application of this skill to have a direct impact building a better company.",
+  }
+]}
+
 export const tracks: Tracks = {
 
   /*

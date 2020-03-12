@@ -1,8 +1,9 @@
 // @flow
 
-import { tracks, milestones, categoryColorScale } from '../constants'
+import type { Milestone, MilestoneMap, TrackId } from '../constants'
+import { categoryColorScale, levels, milestones, tracks } from '../constants'
+
 import React from 'react'
-import type { MilestoneMap, TrackId, Milestone } from '../constants'
 
 type Props = {
   milestoneByTrack: MilestoneMap,
@@ -15,6 +16,7 @@ class Track extends React.Component<Props> {
     const track = tracks[this.props.trackId]
     const currentMilestoneId = this.props.milestoneByTrack[this.props.trackId]
     const currentMilestone = track.milestones[currentMilestoneId - 1]
+    const level = levels.items[currentMilestoneId]
     return (
       <div className="track">
         <style jsx>{`
@@ -47,6 +49,12 @@ class Track extends React.Component<Props> {
           ul {
             line-height: 1.5em;
           }
+          p.level {
+            color: #414141;
+            font-size: 12px;
+            margin-block-start: 4px;
+            margin-block-end: 4px;
+          }
         `}</style>
         <h2>{track.displayName}</h2>
         <p className="track-description">{track.description}</p>
@@ -68,6 +76,8 @@ class Track extends React.Component<Props> {
           </table>
           {currentMilestone ? (
             <div style={{ flex: 1 }}>
+              <p className="level">{level.name}</p>
+              <p className="level">{level.description}</p>
               <h3>{currentMilestone.summary}</h3>
               <h4>Example behaviors:</h4>
               <ul>
@@ -82,7 +92,12 @@ class Track extends React.Component<Props> {
                 ))}
               </ul>
             </div>
-          ) : null}
+          ) : 
+            <div style={{ flex: 1 }}>
+              <p className="level">{level.name}</p>
+              <p className="level">{level.description}</p>
+            </div>
+          }
         </div>
       </div>
     )
