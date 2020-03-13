@@ -1,30 +1,24 @@
 // @flow
 import * as d3 from 'd3'
 
-export type TrackId = 'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' |
-  'ENGINEERING_PRACTICES' | 'SOFTWARE_FUNDAMENTALS' | 'QUALITY' | 'SOFTWARE_SCALE' | 'PROJECT_MANAGEMENT' |
-  'TIME_MANAGEMENT' | 'EFFECTIVE_COMMUNICATION' | 'CONFLICT_RESOULTION' | 'SELF_MANAGEMENT' | 'INITIATIVE' | 'FLEXIBILITY' | 'CREATIVE_THINKING' |
-  'MOTIVATING_OTHERS' | 'DEVELOPING_OTHERS' | 'TEAMWORK' | 'ACCOMPLISHMENT'
+export type TrackId =
+  'PROJECT_MANAGEMENT' | 'TIME_MANAGEMENT' | 'SELF_MANAGEMENT' | 'INITIATIVE' |
+  'EFFECTIVE_COMMUNICATION' | 'CONFLICT_RESOULTION' | 'FLEXIBILITY' | 'CREATIVE_THINKING' |
+  'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' |
+  'MOTIVATING_OTHERS' | 'DEVELOPING_OTHERS' | 'TEAMWORK' | 'ACCOMPLISHMENT' |
+  'ENGINEERING_PRACTICES' | 'SOFTWARE_FUNDAMENTALS' | 'QUALITY' | 'SOFTWARE_SCALE'
 
 export type Milestone = 0 | 1 | 2 | 3 | 4 | 5
 
 export type MilestoneMap = {
-  'MOBILE': Milestone,
-  'WEB_CLIENT': Milestone,
-  'FOUNDATIONS': Milestone,
-  'SERVERS': Milestone,
 
-  'ENGINEERING_PRACTICES': Milestone,
-  'SOFTWARE_FUNDAMENTALS': Milestone,
-  'QUALITY': Milestone,
-  'SOFTWARE_SCALE': Milestone,
   'PROJECT_MANAGEMENT': Milestone,
-
   'TIME_MANAGEMENT': Milestone,
-  'EFFECTIVE_COMMUNICATION': Milestone,
-  'CONFLICT_RESOULTION': Milestone,
   'SELF_MANAGEMENT': Milestone,
   'INITIATIVE': Milestone,
+
+  'EFFECTIVE_COMMUNICATION': Milestone,
+  'CONFLICT_RESOULTION': Milestone,
   'FLEXIBILITY': Milestone,
   'CREATIVE_THINKING': Milestone,
 
@@ -32,6 +26,16 @@ export type MilestoneMap = {
   'DEVELOPING_OTHERS': Track,
   'TEAMWORK': Track,
   'ACCOMPLISHMENT': Track,
+
+  'ENGINEERING_PRACTICES': Milestone,
+  'SOFTWARE_FUNDAMENTALS': Milestone,
+  'QUALITY': Milestone,
+  'SOFTWARE_SCALE': Milestone,
+
+  'MOBILE': Milestone,
+  'WEB_CLIENT': Milestone,
+  'FOUNDATIONS': Milestone,
+  'SERVERS': Milestone,
 }
 
 export type Track = {
@@ -46,22 +50,13 @@ export type Track = {
 }
 
 type Tracks = {
-  'MOBILE': Track,
-  'WEB_CLIENT': Track,
-  'FOUNDATIONS': Track,
-  'SERVERS': Track,
-
-  'ENGINEERING_PRACTICES': Track,
-  'SOFTWARE_FUNDAMENTALS': Track,
-  'QUALITY': Track,
-  'SOFTWARE_SCALE': Track,
   'PROJECT_MANAGEMENT': Track,
-
   'TIME_MANAGEMENT': Track,
-  'EFFECTIVE_COMMUNICATION': Track,
-  'CONFLICT_RESOULTION': Track,
   'SELF_MANAGEMENT': Track,
   'INITIATIVE': Track,
+
+  'EFFECTIVE_COMMUNICATION': Track,
+  'CONFLICT_RESOULTION': Track,
   'FLEXIBILITY': Track,
   'CREATIVE_THINKING': Track,
 
@@ -69,6 +64,16 @@ type Tracks = {
   'DEVELOPING_OTHERS': Track,
   'TEAMWORK': Track,
   'ACCOMPLISHMENT': Track,
+
+  'ENGINEERING_PRACTICES': Track,
+  'SOFTWARE_FUNDAMENTALS': Track,
+  'QUALITY': Track,
+  'SOFTWARE_SCALE': Track,
+
+  'MOBILE': Track,
+  'WEB_CLIENT': Track,
+  'FOUNDATIONS': Track,
+  'SERVERS': Track,
 
 }
 
@@ -108,13 +113,614 @@ export const levels: Level = { items: [
 
 export const tracks: Tracks = {
 
-  /*
-   * Engineering - Building
-   */
+  // EXECUTING
+
+  "TIME_MANAGEMENT": {
+    "displayName": "Time Management",
+    "category": "A",
+    "description": "The ability to get things done effectively and efficiently, which means the right things done at the right time, with the appropriate amount of time spent on them. Time Management involves analyzing how time is spent, and then prioritizing different work tasks. Imply respecting other's time and team members time management.",
+    "milestones": [{
+      "summary": "Effectively managing one’s time and resources to ensure that work is completed efficiently.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Plans the use of his or her time. Concentrates his or her efforts on priorities.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Uses time effectively and efficiently. Concentrates efforts on the most important priorities.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Places a high value on own time and plans tasks accordingly. Makes quality time for the most important priorities.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Uses time and energy efficiently for self and others.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "SELF_MANAGEMENT": {
+    "displayName": "Self Management	",
+    "category": "A",
+    "description": "Must be able to use introspection, self-evaluation and self-management techniques in order to pro-actively and continuously improve own behavior and performance.",
+    "milestones": [{
+      "summary": "Able to control emotions and respect others task and responsibilities.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Deliberately puts emotions aside and is able to keep calm in certain situations asking for help when needed.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Works with a long plan mentallity, not only able to think in themselves but in the team as whole to solve complex situations. Is permeable to ideas and constrcutive feedback to get better otcomes.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "PROJECT_MANAGEMENT": {
+    "displayName": "Project Management",
+    "category": "A",
+    "description": "Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously.",
+    "milestones": [{
+      "summary": "Effectively delivers individual tasks.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Effectively delivers small personal projects.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Effectively delivers projects through a small team.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Effectively delivers projects through a large team, or with a significant amount of stakeholders or complexity.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Manages major company pushes delivered by multiple teams.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "INITIATIVE": {
+    "displayName": "Initiative",
+    "category": "A",
+    "description": "Proactively identifies ways to contribute to Novum’s goals and mission; achieves results without needing reminders from others; identifies and takes action to address problems and opportunities.",
+    "milestones": [{
+      "summary": "Identifies opportunities for organizational change or product improvements.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Causes change to positively impact a few individuals or minor improvement to an existing product or service.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Causes change to positively impact an entire team or instigates a minor feature or service.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Effects change that has a substantial positive impact on the organization or a major product impact.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Effects change that has a substantial positive impact on the whole company.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  // CHANGING
+
+  "EFFECTIVE_COMMUNICATION": {
+    "displayName": "Effective Communication",
+    "category": "B",
+    "description": "The ability to actively listen and to communicate clearly with others in a straightforward way	",
+    "milestones": [{
+      "summary": "Communicates effectively to close stakeholders when called upon, and incorporates constructive feedback	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Communicates appropriately, focusing on timeliness and good quality conversations	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Proactively shares information, actively solicits feedback, and facilitates communication for multiple stakeholder	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Communicates complex ideas skillfully and with nuance, and establishes alignment within the wider organization	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Influences outcomes at the highest level, moves beyond mere broadcasting, and sets best practices for others	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "CONFLICT_RESOULTION": {
+    "displayName": "Conflict Resolution",
+    "category": "B",
+    "description": "Involves having the ability to help others through emotional or tense situations, tactfully bring disagreements into the open, and define solutions that everyone can endorse. Leaders who take time to understand different perspectives work toward finding a common ground on which everyone can agree. They acknowledge the views of all sides, while redirecting the energy toward a shared ideal or an agreeable resolution.",
+    "milestones": [{
+      "summary": "Identifies conflict situations and is aware of some actions that must be taken.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Identifies conflict sitations and is able to articulate some solutions.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Solve conflicts successfully and is able to propose imparcial solutions.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is proactive, sees the problem ahead and is accepted as an impartial part for others.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is capable of solving complex conflict situations and able to anticipate them. Is also able to trace a plan seen fair and respected by parties involve.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "FLEXIBILITY": {
+    "displayName": "Flexibility / Dealing with Ambiguity",
+    "category": "B",
+    "description": "Can effectively cope with change; can shift gears comfortably; can decide and act without having the total picture; can comfortably handle risk and uncertainty.",
+    "milestones": [{
+      "summary": "Assumes uncertainty and is flexible to agree new terms and actions.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Given a new situation and learning from it, adapts projects in order to succeed.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is able to implement changes and iterate constantly while changes happen, reacting quickly.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is able to develop a successful plan in unexpected and major situations, establishing new priorities and path to follow.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "CREATIVE_THINKING": {
+    "displayName": "Creativity Thinking	",
+    "category": "B",
+    "description": "Discovering new opportunities and solutions for problems by looking beyond current practices and using innovative thinking.",
+    "milestones": [{
+      "summary": "Proposes new ideas within his/her role, taking his/her experience as a tool.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Generates innovative ideas within his/her role.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Creates many new innovative ideas and is able to relate different unnconected experiences to create them.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Thinks out of the box and creates new ideas and ways of  working without fear of failure.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Proposes, constantly, unique ideas using deep analysis crossing ideas and processes form a variety of sources.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  // MENTORING
+
+  "MOTIVATING_OTHERS": {
+    "displayName": "Motivating Others",
+    "category": "C",
+    "description": "Creates a climate in which people want to do their best; can assess each person’s strengths and use them to get the best out of him or her; promotes confidence and optimistic attitudes; is someone people like working for and with.",
+    "milestones": [{
+      "summary": "Promotes a positive working enviroment.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Able to motivate some individuals within the organization.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Motivates wider audiences within his area of influence.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Motivates people and organizational units.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Motivates the entire organization.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "DEVELOPING_OTHERS": {
+    "displayName": "Developing Others	",
+    "category": "C",
+    "description": "The ability to retain talent and drive higher levels of employee engagement. Developing Others provides a supportive environment for enhanced performance and professional growth. It is critical to retaining talent, driving higher levels of employee engagement, and ultimately impacts an organization’s success. To develop others you need to act as a trusted advisor, acts on an independent opinion on client needs, problems/opportunities, and possibilities for implementation.",
+    "milestones": [{
+      "summary": "Gives insight into opportunities and helps identify individuals' strengths and weaknesses.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Formally supports and advocates for one person and provides tools to help them solve career problems.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Inspires and retains a small group of people and actively pushes them to stretch themselves.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Manages interactions and processes between groups, promoting best practices and setting a positive example.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Supports the development of a signficant part of the engineering org, and widely viewed as a trusted advisor.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "TEAMWORK": {
+    "displayName": "Teamwork",
+    "category": "C",
+    "description": "The ability to motivate, develop and build a team to achieve the highest levels of performance.",
+    "milestones": [{
+      "summary": "Uses tools and processes to help ensure colleagues are healthy and happy.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Creates a positive, supportive, engaging team environment for group members	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Manages expectations across peers, leads in the org, promotes calm, and prevents consensus building.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Advocates for the needs of teams and group members, and proactively works to calm the organization.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Manages narratives, channels negativity into inspiration and motivation, and protects the entire team.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "ACCOMPLISHMENT": {
+    "displayName": "Accomplishment",
+    "category": "C",
+    "description": "Inspires day to day excellence, maximizes potential and effectively resolves performance issues with compassion.",
+    "milestones": [{
+      "summary": "Helps individuals identify blockers and helps them identify next steps for resolution.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Helps individuals resolve difficult performance issues, with insight, compassion, and skill.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Intervenes in long-standing performance issues with targeted behavior change or performance plans.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Mediates escalated situations, empowers underperforming teams, and resolves conflict.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Resolves complex organizational dysfunction, or persistent conflict at senior levels.",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  // ENGINEERING FUNDAMENTALS
+
+  "ENGINEERING_PRACTICES": {
+    "displayName": "Engineering Practices",
+    "category": "D",
+    "description": "Makes Novum's solutions robust and aids rapid value delivery by applying stablished engineering practices and patterns and/or promotes alternatives ways of working for achieving the same goal.",
+    "milestones": [{
+      "summary": "Produces software according to the industry stablished good practices standards.	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Recognises and efficiently applies principles of working with software like DRY, KISS, YAGNI (among others).",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Delivers solutions efficiently, maximising the delivery of value to the current context	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is an early-adopter of software engineering methodologies. Promotes XP practices, producing tooling and mentoring to ease the introduction of  delivery patterns	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }, {
+      "summary": "Is an innovator in the context of methodologies and ways of working, introducing patterns that maximise the value throughput of the company	",
+      "signals": [
+      ],
+      "examples": [
+      ],
+    }],
+  },
+
+  "SOFTWARE_FUNDAMENTALS": {
+    "displayName": "Software Fundamentals",
+    "category": "D",
+    "description": "Ability to effectively work with software by applying knowledge to day to day tasks and software design. Understanding and mastering the underlying difficulties of working with software, from correctness and efficiency to resilience and scalability.",
+    "milestones": [
+      {
+        "summary": "Develops a small code task like a product improvement or bugfixing.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Develops a service through your team.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Develops a product through your team.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Develops a complex product with a significant amount of different teams.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Manages major company technology changes by multiple areas.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }],
+  },
+
+  "QUALITY": {
+    "displayName": "Quality",
+    "category": "D",
+    "description": "Embeds Quality to the Products they deliver at every stage, from inception to delivery.",
+    "milestones": [
+      {
+        "summary": "Embeds quality in the delivery of a solution to a well defined problem.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Embeds qualtity in the delivery of complex solutions, during component integration.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Embeds quality during product definition (functional and non-functional).",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Promotes a quality culture, where it is embeded from the inception of the product to its delivery.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Embeds quality in the company's culture.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }],
+  },
+
+  "SOFTWARE_SCALE": {
+    "displayName": "Software at Scale",
+    "category": "D",
+    "description": "Delivers software that can be used at large scale with growth capacity without compromising user experience, availability and operational costs. Delivers software that is widely available and effectively performs in wide spectrum of scenarios (not necessarily all being well-intended).",
+    "milestones": [
+      {
+        "summary": "Recognises complexities of delivering software at large scale.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Effectively manages local resources or within a limited scope.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Has in-depth understanding of capacity constraints and efficiently manages scalability of small to medium sized components.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Has in-depth understanding of capacity constraints and produces solutions reusable beyond a single component.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }, {
+        "summary": "Is a leading role at CTO scope in scalability and performance.",
+        "signals": [
+        ],
+        "examples": [
+        ],
+      }],
+  },
+
+  // ENGINEERING BUILDING
 
   "MOBILE": {
     "displayName": "Mobile",
-    "category": "A",
+    "category": "E",
     "description": "Develops expertise in native mobile platform engineering, such as iOS or Android",
     "milestones": [{
       "summary": "Works effectively within established iOS or Android architectures, following current best practices",
@@ -181,7 +787,7 @@ export const tracks: Tracks = {
 
   "WEB_CLIENT": {
     "displayName": "Web client",
-    "category": "A",
+    "category": "E",
     "description": "Develops expertise in web client technologies, such as HTML, CSS, and JavaScript",
     "milestones": [{
       "summary": "Works effectively within established web client architectures, following current best practices",
@@ -248,7 +854,7 @@ export const tracks: Tracks = {
 
   "FOUNDATIONS": {
     "displayName": "Foundations",
-    "category": "A",
+    "category": "E",
     "description": "Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning",
     "milestones": [{
       "summary": "Works effectively within established structures, following current best practices",
@@ -315,7 +921,7 @@ export const tracks: Tracks = {
 
   "SERVERS": {
     "displayName": "Servers",
-    "category": "A",
+    "category": "E",
     "description": "Develops expertise in server side engineering, using technologies such as Go, NodeJS, or Scala",
     "milestones": [{
       "summary": "Works effectively within established server side frameworks, following current best practices",
@@ -376,613 +982,6 @@ export const tracks: Tracks = {
         "Researched, vetted, and selected Go as Medium's statically typed language",
         "Defined microservices architecture and medium2 migration plan",
         "Defined and implemented proprietary IP core to the company's success",
-      ],
-    }],
-  },
-
-  /*
-   * Engineering - Fundamentals
-   */
-
-  "ENGINEERING_PRACTICES": {
-    "displayName": "Engineering Practices",
-    "category": "B",
-    "description": "Makes Novum's solutions robust and aids rapid value delivery by applying stablished engineering practices and patterns and/or promotes alternatives ways of working for achieving the same goal.",
-    "milestones": [{
-      "summary": "Produces software according to the industry stablished good practices standards.	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Recognises and efficiently applies principles of working with software like DRY, KISS, YAGNI (among others).",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Delivers solutions efficiently, maximising the delivery of value to the current context	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Is an early-adopter of software engineering methodologies. Promotes XP practices, producing tooling and mentoring to ease the introduction of  delivery patterns	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Is an innovator in the context of methodologies and ways of working, introducing patterns that maximise the value throughput of the company	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "SOFTWARE_FUNDAMENTALS": {
-    "displayName": "Software Fundamentals",
-    "category": "B",
-    "description": "Ability to effectively work with software by applying knowledge to day to day tasks and software design. Understanding and mastering the underlying difficulties of working with software, from correctness and efficiency to resilience and scalability.",
-    "milestones": [
-      {
-        "summary": "Develops a small code task like a product improvement or bugfixing.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Develops a service through your team.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Develops a product through your team.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Develops a complex product with a significant amount of different teams.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Manages major company technology changes by multiple areas.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }],
-  },
-
-  "QUALITY": {
-    "displayName": "Quality",
-    "category": "B",
-    "description": "Embeds Quality to the Products they deliver at every stage, from inception to delivery.",
-    "milestones": [
-      {
-        "summary": "Embeds quality in the delivery of a solution to a well defined problem.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Embeds qualtity in the delivery of complex solutions, during component integration.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Embeds quality during product definition (functional and non-functional).",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Promotes a quality culture, where it is embeded from the inception of the product to its delivery.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Embeds quality in the company's culture.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }],
-  },
-
-  "SOFTWARE_SCALE": {
-    "displayName": "Software at Scale",
-    "category": "B",
-    "description": "Delivers software that can be used at large scale with growth capacity without compromising user experience, availability and operational costs. Delivers software that is widely available and effectively performs in wide spectrum of scenarios (not necessarily all being well-intended).",
-    "milestones": [
-      {
-        "summary": "Recognises complexities of delivering software at large scale.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Effectively manages local resources or within a limited scope.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Has in-depth understanding of capacity constraints and efficiently manages scalability of small to medium sized components.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Has in-depth understanding of capacity constraints and produces solutions reusable beyond a single component.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }, {
-        "summary": "Is a leading role at CTO scope in scalability and performance.",
-        "signals": [
-        ],
-        "examples": [
-        ],
-      }],
-  },
-
-  "PROJECT_MANAGEMENT": {
-    "displayName": "Project Management",
-    "category": "B",
-    "description": "Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously.",
-    "milestones": [{
-      "summary": "Effectively delivers individual tasks.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Effectively delivers small personal projects.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Effectively delivers projects through a small team.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Effectively delivers projects through a large team, or with a significant amount of stakeholders or complexity.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Manages major company pushes delivered by multiple teams.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  /*
-   * General - Executing
-   */
-
-  "TIME_MANAGEMENT": {
-    "displayName": "Time Management",
-    "category": "C",
-    "description": "The ability to get things done effectively and efficiently, which means the right things done at the right time, with the appropriate amount of time spent on them. Time Management involves analyzing how time is spent, and then prioritizing different work tasks. Imply respecting other's time and team members time management.",
-    "milestones": [{
-      "summary": "Effectively managing one’s time and resources to ensure that work is completed efficiently.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Plans the use of his or her time. Concentrates his or her efforts on priorities.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Uses time effectively and efficiently. Concentrates efforts on the most important priorities.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Places a high value on own time and plans tasks accordingly. Makes quality time for the most important priorities.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Uses time and energy efficiently for self and others.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "EFFECTIVE_COMMUNICATION": {
-    "displayName": "Effective Communication",
-    "category": "C",
-    "description": "The ability to actively listen and to communicate clearly with others in a straightforward way	",
-    "milestones": [{
-      "summary": "Communicates effectively to close stakeholders when called upon, and incorporates constructive feedback	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Communicates appropriately, focusing on timeliness and good quality conversations	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Proactively shares information, actively solicits feedback, and facilitates communication for multiple stakeholder	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Communicates complex ideas skillfully and with nuance, and establishes alignment within the wider organization	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Influences outcomes at the highest level, moves beyond mere broadcasting, and sets best practices for others	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "CONFLICT_RESOULTION": {
-    "displayName": "Conflict Resolution",
-    "category": "C",
-    "description": "Involves having the ability to help others through emotional or tense situations, tactfully bring disagreements into the open, and define solutions that everyone can endorse. Leaders who take time to understand different perspectives work toward finding a common ground on which everyone can agree. They acknowledge the views of all sides, while redirecting the energy toward a shared ideal or an agreeable resolution.",
-    "milestones": [{
-      "summary": "Identifies conflict situations and is aware of some actions that must be taken.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Identifies conflict sitations and is able to articulate some solutions.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Solve conflicts successfully and is able to propose imparcial solutions.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Is proactive, sees the problem ahead and is accepted as an impartial part for others.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Is capable of solving complex conflict situations and able to anticipate them. Is also able to trace a plan seen fair and respected by parties involve.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "SELF_MANAGEMENT": {
-    "displayName": "Self Management	",
-    "category": "C",
-    "description": "Must be able to use introspection, self-evaluation and self-management techniques in order to pro-actively and continuously improve own behavior and performance.",
-    "milestones": [{
-      "summary": "Able to control emotions and respect others task and responsibilities.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Deliberately puts emotions aside and is able to keep calm in certain situations asking for help when needed.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Works with a long plan mentallity, not only able to think in themselves but in the team as whole to solve complex situations. Is permeable to ideas and constrcutive feedback to get better otcomes.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "INITIATIVE": {
-    "displayName": "Initiative",
-    "category": "C",
-    "description": "Proactively identifies ways to contribute to Novum’s goals and mission; achieves results without needing reminders from others; identifies and takes action to address problems and opportunities.",
-    "milestones": [{
-      "summary": "Identifies opportunities for organizational change or product improvements.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Causes change to positively impact a few individuals or minor improvement to an existing product or service.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Causes change to positively impact an entire team or instigates a minor feature or service.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Effects change that has a substantial positive impact on the organization or a major product impact.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Effects change that has a substantial positive impact on the whole company.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "FLEXIBILITY": {
-    "displayName": "Flexibility / Dealing with Ambiguity",
-    "category": "C",
-    "description": "Can effectively cope with change; can shift gears comfortably; can decide and act without having the total picture; can comfortably handle risk and uncertainty.",
-    "milestones": [{
-      "summary": "Assumes uncertainty and is flexible to agree new terms and actions.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Given a new situation and learning from it, adapts projects in order to succeed.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Is able to implement changes and iterate constantly while changes happen, reacting quickly.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Is able to develop a successful plan in unexpected and major situations, establishing new priorities and path to follow.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "CREATIVE_THINKING": {
-    "displayName": "Creativity Thinking	",
-    "category": "C",
-    "description": "Discovering new opportunities and solutions for problems by looking beyond current practices and using innovative thinking.",
-    "milestones": [{
-      "summary": "Proposes new ideas within his/her role, taking his/her experience as a tool.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Generates innovative ideas within his/her role.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Creates many new innovative ideas and is able to relate different unnconected experiences to create them.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Thinks out of the box and creates new ideas and ways of  working without fear of failure.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Proposes, constantly, unique ideas using deep analysis crossing ideas and processes form a variety of sources.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  /*
-   * General - Mentoring
-   */
-
-  "MOTIVATING_OTHERS": {
-    "displayName": "Motivating Others",
-    "category": "D",
-    "description": "Creates a climate in which people want to do their best; can assess each person’s strengths and use them to get the best out of him or her; promotes confidence and optimistic attitudes; is someone people like working for and with.",
-    "milestones": [{
-      "summary": "Promotes a positive working enviroment.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Able to motivate some individuals within the organization.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Motivates wider audiences within his area of influence.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Motivates people and organizational units.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Motivates the entire organization.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "DEVELOPING_OTHERS": {
-    "displayName": "Developing Others	",
-    "category": "D",
-    "description": "The ability to retain talent and drive higher levels of employee engagement. Developing Others provides a supportive environment for enhanced performance and professional growth. It is critical to retaining talent, driving higher levels of employee engagement, and ultimately impacts an organization’s success. To develop others you need to act as a trusted advisor, acts on an independent opinion on client needs, problems/opportunities, and possibilities for implementation.",
-    "milestones": [{
-      "summary": "Gives insight into opportunities and helps identify individuals' strengths and weaknesses.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Formally supports and advocates for one person and provides tools to help them solve career problems.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Inspires and retains a small group of people and actively pushes them to stretch themselves.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Manages interactions and processes between groups, promoting best practices and setting a positive example.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Supports the development of a signficant part of the engineering org, and widely viewed as a trusted advisor.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "TEAMWORK": {
-    "displayName": "Teamwork",
-    "category": "D",
-    "description": "The ability to motivate, develop and build a team to achieve the highest levels of performance.",
-    "milestones": [{
-      "summary": "Uses tools and processes to help ensure colleagues are healthy and happy.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Creates a positive, supportive, engaging team environment for group members	",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Manages expectations across peers, leads in the org, promotes calm, and prevents consensus building.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Advocates for the needs of teams and group members, and proactively works to calm the organization.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Manages narratives, channels negativity into inspiration and motivation, and protects the entire team.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }],
-  },
-
-  "ACCOMPLISHMENT": {
-    "displayName": "Accomplishment",
-    "category": "D",
-    "description": "Inspires day to day excellence, maximizes potential and effectively resolves performance issues with compassion.",
-    "milestones": [{
-      "summary": "Helps individuals identify blockers and helps them identify next steps for resolution.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Helps individuals resolve difficult performance issues, with insight, compassion, and skill.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Intervenes in long-standing performance issues with targeted behavior change or performance plans.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Mediates escalated situations, empowers underperforming teams, and resolves conflict.",
-      "signals": [
-      ],
-      "examples": [
-      ],
-    }, {
-      "summary": "Resolves complex organizational dysfunction, or persistent conflict at senior levels.",
-      "signals": [
-      ],
-      "examples": [
       ],
     }],
   },
@@ -1051,7 +1050,7 @@ export const totalPointsFromMilestoneMap = (milestoneMap: MilestoneMap): number 
 
 export const categoryColorScale = d3.scaleOrdinal()
   .domain(categoryIds)
-  .range(['#00abc2', '#428af6', '#e1439f', '#e54552'])
+  .range(['#00abc2', '#428af6', '#9f43e1', '#e1439f', '#e54552'])
 
 export const titles = [
   { label: 'Engineer I', minPoints: 0, maxPoints: 45 },

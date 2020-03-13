@@ -16,6 +16,7 @@ class TrackSelector extends React.Component<Props> {
       <table>
         <style jsx>{`
           table {
+            display: box;
             width: 100%;
             border-spacing: 3px;
             border-bottom: 2px solid #ccc;
@@ -24,8 +25,9 @@ class TrackSelector extends React.Component<Props> {
             margin-left: -3px;
           }
           .track-selector-value {
+            display: box;
             line-height: 50px;
-            width: 50px;
+            width: 5% !important;
             text-align: center;
             background: #eee;
             font-weight: bold;
@@ -34,6 +36,7 @@ class TrackSelector extends React.Component<Props> {
             cursor: pointer;
           }
           .track-selector-label {
+            width: 5% !important;
             text-align: center;
             font-size: 9px;
           }
@@ -49,8 +52,8 @@ class TrackSelector extends React.Component<Props> {
           <tr>
             {trackIds.map(trackId => (
               <td key={trackId} className="track-selector-value"
-                  style={{border: '4px solid ' + (trackId == this.props.focusedTrackId ? '#000': categoryColorScale(tracks[trackId].category)), background: categoryColorScale(tracks[trackId].category)}}
-                  onClick={() => this.props.setFocusedTrackIdFn(trackId)}>
+                style={{ border: '4px solid ' + (trackId == this.props.focusedTrackId ? '#000' : categoryColorScale(tracks[trackId].category)), background: categoryColorScale(tracks[trackId].category) }}
+                onClick={() => this.props.setFocusedTrackIdFn(trackId)}>
                 {this.props.milestoneByTrack[trackId]}
               </td>
             ))}
