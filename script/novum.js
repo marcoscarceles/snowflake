@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import fs from 'fs';
 
 import { withGoogle } from './google-adapter.js'
 
@@ -20,7 +21,7 @@ function getLevels(cells) {
         levels[key] = { start: start, end: end }
     })
 
-    console.log("Levels are", levels)
+    // console.log("Levels are", levels)
     return levels;
 }
 
@@ -30,21 +31,27 @@ function getCompetenciesRow(cells, levels) {
         previous;
 
     while (previous = cells[currentRow - 1][1] != "Tracks") { currentRow-- };
-    console.log("Competencies Row is ", currentRow)
+    // console.log("Competencies Row is ", currentRow)
     return currentRow;
 }
 
-function getCompetencies(row) {
+function asConstant(string) {
+    return string.toUpperCase().replace(/\s+/, '_');
+}
+
+function getCompetencies(row, category) {
     let competencies = {}
     row.forEach((value, index) => {
-        if (value && !competencies[value]) {
-            competencies[value] = {
+        const key = asConstant(value || "");
+        if (key && !competencies[key]) {
+            competencies[key] = {
                 "displayName": value,
                 "column": index,
+                "category": category
             };
         }
     })
-    console.log("Competencies", competencies);
+    // console.log("Competencies", competencies);
     return competencies;
 }
 
@@ -70,50 +77,77 @@ function hydrateCompetencies(cells, levels, competencies) {
             };
             milestone.summary = cells[level.start][competency.column]
             for (let row = levelDetails; row < level.end; row++) {
-                let behaviour, practice
+                let behaviour, practice;
                 if (behaviour = cells[row][competency.column]) {
-                    milestone.signals.push(behaviour)
+                    milestone.signals.push(behaviour);
                 }
-                if (practice = cells[row][competency.column]) {
-                    milestone.examples.push(practice)
+                if (practice = cells[row][competency.column + 1]) {
+                    milestone.examples.push(practice);
                 }
             }
-            console.log("Milestone", milestone);
-            competency.milestones.push(milestone)
+            // console.log("Milestone", milestone);
+            competency.milestones.push(milestone);
         })
     }
 
-    console.log("Competencies", competencies)
+    // console.log("Competencies", competencies)
 }
 
-function generalExecutingRows(sheets) {
-    sheets.spreadsheets.values.get({
-        spreadsheetId: SHEET_ID,
-        range: 'Executing!A1:X',
-    }, (err, res) => {
-        if (err) return console.log('The API returned an error: ' + err);
-        const cells = res.data.values;
-        if (cells.length) {
+function getCompetenciesFor(sheets, sheetTitle) {
 
-            let levels = getLevels(cells)
+    return new Promise((resolve, reject) => {
+        sheets.spreadsheets.values.get({
+            spreadsheetId: SHEET_ID,
+            range: sheetTitle + '!A1:X',
+        }, (err, res) => {
+            if (err) reject(err);
+            const cells = res.data.values;
+            let competencies;
+            if (cells.length) {
 
-            //Fetch Competencies
-            let competenciesRow = getCompetenciesRow(cells, levels);
-            let competencies = getCompetencies(cells[competenciesRow]);
+                let levels = getLevels(cells)
 
-            hydrateCompetencies(cells, levels, competencies);
+                //Fetch Competencies
+                let competenciesRow = getCompetenciesRow(cells, levels);
+                competencies = getCompetencies(cells[competenciesRow], sheetTitle);
 
-        } else {
-            console.log('No data found.');
-        }
+                hydrateCompetencies(cells, levels, competencies);
+
+            } else {
+                competencies = {};
+            }
+            resolve(competencies);
+        });
     });
-
 }
 
 function doEverything(google, auth) {
     const sheets = google.sheets({ version: 'v4', auth });
-    // getLevels(sheets);
-    generalExecutingRows(sheets);
+    Promise.all(
+        ['Executing', 'Changing', 'Mentoring', 'Eng Fundamentals', 'Eng Building'].map(sheetTitle => getCompetenciesFor(sheets, sheetTitle))
+    ).then(values => {
+        return values.reduce((acc, current) => {
+            console.log("ACC", acc);
+            console.log("CURRENT", current);
+            return Object.assign(acc, current);
+        })
+    }).then(competencies => {
+        return new Promise((resolve, reject) => {
+
+            let keys = Object.keys(competencies);
+
+            let asString = "export const novumKeys = " + JSON.stringify(keys, null, 2) + "\n\n" +
+                "export const novumTracks = " + JSON.stringify(competencies, null, 2);
+            console.log(asString);
+            fs.writeFile("novumConstants.js", asString, (err, data) => {
+                if (err) {
+                    return reject(err);
+                }
+                resolve(data);
+            });
+        });
+    });
 }
 
 withGoogle(doEverything);
+

@@ -51,32 +51,32 @@ const emptyState = (): SnowflakeAppState => {
     title: '',
     milestoneByTrack: {
 
-      'PROJECT_MANAGEMENT': 0,
-      'TIME_MANAGEMENT': 0,
-      'SELF_MANAGEMENT': 0,
-      'INITIATIVE': 0,
+      "TIME_MANAGEMENT": 0,
+      "SELF_MANAGEMENT": 0,
+      "PROJECT_MANAGEMENT": 0,
+      "INITIATIVE": 0,
 
-      'EFFECTIVE_COMMUNICATION': 0,
-      'CONFLICT_RESOULTION': 0,
-      'FLEXIBILITY': 0,
-      'CREATIVE_THINKING': 0,
+      "EFFECTIVE_COMMUNICATION": 0,
+      "CONFLICT_RESOLUTION": 0,
+      "FLEXIBILITY_/ DEALING WITH AMBIGUITY": 0,
+      "CREATIVITY_THINKING": 0,
 
-      'MOTIVATING_OTHERS': 0,
-      'DEVELOPING_OTHERS': 0,
-      'TEAMWORK': 0,
-      'ACCOMPLISHMENT': 0,
+      "MOTIVATING_OTHERS": 0,
+      "DEVELOPING_OTHERS": 0,
+      "TEAMWORK": 0,
+      "ACCOMPLISHMENT": 0,
 
-      'ENGINEERING_PRACTICES': 0,
-      'SOFTWARE_FUNDAMENTALS': 0,
-      'QUALITY': 0,
-      'SOFTWARE_SCALE': 0,
+      "ENGINEERING_WOW PRACTICES": 0,
+      "SOFTWARE_FUNDAMENTALS": 0,
+      "SOFTWARE_AT SCALE": 0,
+      "QUALITY": 0,
 
-      'MOBILE': 0,
-      'WEB_CLIENT': 0,
-      'FOUNDATIONS': 0,
-      'SERVERS': 0,
+      "MOBILE": 0,
+      "WEB_CLIENT": 0,
+      "SERVER": 0,
+      "FOUNDATIONS": 0,
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'TIME_MANAGEMENT'
   }
 }
 
@@ -86,33 +86,33 @@ const defaultState = (): SnowflakeAppState => {
     title: 'Staff Engineer',
     milestoneByTrack: {
 
-      'PROJECT_MANAGEMENT': 2,
-      'TIME_MANAGEMENT': 1,
-      'SELF_MANAGEMENT': 1,
-      'INITIATIVE': 2,
+      "TIME_MANAGEMENT": 3,
+      "SELF_MANAGEMENT": 0,
+      "PROJECT_MANAGEMENT": 3,
+      "INITIATIVE": 4,
 
-      'EFFECTIVE_COMMUNICATION': 3,
-      'CONFLICT_RESOULTION': 4,
-      'FLEXIBILITY': 0,
-      'CREATIVE_THINKING': 1,
+      "EFFECTIVE_COMMUNICATION": 5,
+      "CONFLICT_RESOLUTION": 1,
+      "FLEXIBILITY_/ DEALING WITH AMBIGUITY": 0,
+      "CREATIVITY_THINKING": 2,
 
-      'MOTIVATING_OTHERS': 0,
-      'DEVELOPING_OTHERS': 0,
-      'TEAMWORK': 0,
-      'ACCOMPLISHMENT': 2,
+      "MOTIVATING_OTHERS": 1,
+      "DEVELOPING_OTHERS": 0,
+      "TEAMWORK": 1,
+      "ACCOMPLISHMENT": 3,
 
-      'ENGINEERING_PRACTICES': 4,
-      'SOFTWARE_FUNDAMENTALS': 1,
-      'QUALITY': 1,
-      'SOFTWARE_SCALE': 2,
+      "ENGINEERING_WOW PRACTICES": 3,
+      "SOFTWARE_FUNDAMENTALS": 2,
+      "SOFTWARE_AT SCALE": 5,
+      "QUALITY": 1,
 
-      'MOBILE': 1,
-      'WEB_CLIENT': 2,
-      'FOUNDATIONS': 3,
-      'SERVERS': 2,
+      "MOBILE": 1,
+      "WEB_CLIENT": 2,
+      "SERVER": 3,
+      "FOUNDATIONS": 4,
 
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'TIME_MANAGEMENT'
   }
 }
 
