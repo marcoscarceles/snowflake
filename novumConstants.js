@@ -177,7 +177,7 @@ export const novumTracks = {
         ]
       },
       {
-        "summary": "Effectively delivers small personal projects",
+        "summary": "Effectively delivers small projects",
         "signals": [
           "Performs research and considers alternative approaches",
           "Balances pragmatism and polish appropriately",
@@ -186,7 +186,7 @@ export const novumTracks = {
         "examples": [
           "Delivered new feature compement on app",
           "Delivered new feature on webapp",
-          "Report status of your task on standup meeting"
+          "Reported status of a task on a standup meeting"
         ]
       },
       {
@@ -244,9 +244,9 @@ export const novumTracks = {
           "Seeks help where challenged in trying something new"
         ],
         "examples": [
-          "Assumes tasks voluntarily",
-          "Reasons and thinks when taking on new tasks.",
-          "Asks help from others"
+          "Assumed tasks voluntarily",
+          "Reasoned and thought when taking on new tasks.",
+          "Asked help from others"
         ]
       },
       {
@@ -257,9 +257,9 @@ export const novumTracks = {
           "Identifies problems and acts to prevent and solve them"
         ],
         "examples": [
-          "Assumes challenging task.",
-          "Asks help from experts in a certain mater.",
-          "proactivily monitor metrics relative to their area or servies "
+          "Assumed challenging task.",
+          "Asked help from experts in a certain mater.",
+          "Monitored metrics relative to their area or servies "
         ]
       },
       {
@@ -272,11 +272,11 @@ export const novumTracks = {
           "Defined style guide to resolve style arguments"
         ],
         "examples": [
-          "Introduces a new technology or process that shows potencial benefis to the team",
-          "Defines the goals for next quarter",
-          "Keeps going with the projects even if there are difficulties or changes",
-          "Responsibles for doing the least rewarding tasks, leaving the most important team members",
-          "Repriorizates workload on a team to address a potencial issue based on metrics information "
+          "Introduced a new technology or process that shows potencial benefis to the team",
+          "Defined the goals for next quarter",
+          "Kept going with the projects even if there are difficulties or changes",
+          "Responsibled for doing the least rewarding tasks, leaving the most important team members",
+          "Repriorizated workload on a team to address a potencial issue based on metrics information "
         ]
       },
       {
@@ -288,9 +288,9 @@ export const novumTracks = {
           "Integrates future and conflicting scenarios and opportunities"
         ],
         "examples": [
-          "Prevee situaciones y se adelanta",
-          "Respones to an OB stakeholder with consensus response with PMO and CPM",
-          "Makes a plan for a new project with PMO"
+          "Found an improvement in qr code links in flow and implemented",
+          "Responed to an OB stakeholder with consensus response with PMO and CPM",
+          "Made a plan for a new project with PMO"
         ]
       },
       {
@@ -303,11 +303,11 @@ export const novumTracks = {
           "Sustains progress in unprecedented strategic directions while maintaining superior ongoing performance"
         ],
         "examples": [
-          "Defines strategic to introduce Private Web area in OBs",
-          "Evaluates risks in Alemania OB before presenting Novum propousal ",
-          "Builds a Interactions team to develop new area product as Living apps ",
-          "Double check their strategies with stakeholders to verify is in the right direction ",
-          "Reviews team's OKRs and verifies group goes in a good direction"
+          "Defined strategic to introduce Private Web area in OBs",
+          "Evaluated risks in Alemania OB before presenting Novum propousal ",
+          "Built a Interactions team to develop new area product as Living apps ",
+          "Double checked their strategies with stakeholders to verify is in the right direction ",
+          "Reviewed team's OKRs and verifies group goes in a good direction"
         ]
       }
     ]
@@ -590,37 +590,38 @@ export const novumTracks = {
     "description": "Creates a climate in which people want to do their best; can assess each person’s strengths and use them to get the best out of him or her; promotes confidence and optimistic attitudes; is someone people like working for and with",
     "milestones": [
       {
-        "summary": "Promotes a positive working enviroment",
+        "summary": "Promotes a positive working enviroment.",
         "signals": [
-          "Maintains a climate in which people want to do their best",
+          "Maintains a climate in which people want to do their best.",
           "Models excellence and enthusiasm for the work."
         ],
         "examples": [
-          "mostrar una actitud positiva ante los problemas que surgen en el dia a dia",
-          "ante un nuevo proyecto muestra buena actitud y predisposicion"
+          "Found the best implementation for their current project.",
+          "Brough new best practices for improving team performance."
         ]
       },
       {
-        "summary": "Able to motivate some individuals within the organization",
+        "summary": "Motivates some individuals within their area of influence.",
         "signals": [
-          "Able to motivate a limited range of individuals within the organization",
-          "Makes individuals feel his or her work is important; is someone people like working for and with"
+          "Can motivate a limited range of individuals within the organization.",
+          "Makes individuals feel their work is important; is someone people like working for and with"
         ],
         "examples": [
           "Motiva a sus compañeros de equipo",
-          "Es una persona con la que la gente quiere trabajar"
+          "Collaborated within other team member to release new CMS module."
         ]
       },
       {
-        "summary": "Motivates wider audiences within his area of influence",
+        "summary": "Motivates wider audiences within their area of influence.",
         "signals": [
-          "Able to motivate a wide range of individuals, including direct reports, team members, and project members",
+          "Can motivate a wide range of individuals, including direct reports, team members, and project members.",
           "Invites input from each person and shares ownership and visibility",
-          "Inspires others to a greater effort by setting an example in his or her own behavior of courage, dedication, or self-sacrifice"
+          "Inspires others to a greater effort by setting an example in their own behavior of courage, dedication, or self-sacrifice"
         ],
         "examples": [
-          "Consigue motivar a los miembros de su equipo y a los miembros de los equipos con los que interactua",
-          "Deja a los demas que aporten ideas en las reuniones de equipo"
+          "Found intrinsic motivations of each direct report using 1:1s meetings.",
+          "Gathered everyone concern to align it their Tech PID before presenting it.",
+          "Was a key person to launch MyO2 app."
         ]
       },
       {
@@ -631,24 +632,24 @@ export const novumTracks = {
           "Designs and provides incentives to encourage widespread participation and regularly incorporates stress-busters to minimize pressure points"
         ],
         "examples": [
-          "es conocido por apoyar a los compñaeros",
-          "Muestra ganas a la hora de afrontar los proyectos fijados",
-          "Hace challenge a los compañeros para que den lo mejor de si mismos"
+          "Was supported with their colleagues to achieve the 11.6 app release in O2UK.",
+          "Did not give up when defining a way of working with the OB, encouraging their team to continue pushing the OB to get an agreement.",
+          "Gathered the opinion regarding new goals from the whole team to onboard everyone on them."
         ]
       },
       {
-        "summary": "Motivates the entire organization",
+        "summary": "Motivates the entire organization.",
         "signals": [
-          "Successfully motivates the entire organization",
-          "Recognizes each person’s strengths, development needs, and professional goals, and inspires them to succeed",
-          "Appropriately rewards and acclaims individuals, groups, and organizations for stellar achievements",
+          "Successfully motivates the entire organization.",
+          "Recognizes each person’s strengths, development needs, and professional goals, and inspires them to succeed.",
+          "Appropriately rewards and acclaims individuals, groups, and organizations for stellar achievements.",
           "Coaches others on ways to motivate."
         ],
         "examples": [
-          "Es capaz de motivar y hacer challenge a gente con la que normalmente no trabaja de forma directa",
-          "Un lead tiene un conocimiento exhaustivo de los skills de cada miembro del equipo",
-          "Reconoce publicamente los existos de otros . Forma oral o escrita",
-          "Un lead capaz de hacer challenge a cada miembro del equipo teniendo en cuenta sus cualidades y skills Y obtener resultados satisfactorios"
+          "Drove organizational transformation through teams without having direct report to them.",
+          "Was able to balance resources between teams in the last quarter reorganization.",
+          "Recognized the effort done by the team to launch Mi Movistar ES in a Q&A.",
+          "Defined tools like a competency framework to improve team development."
         ]
       }
     ]
@@ -668,10 +669,10 @@ export const novumTracks = {
           "Explains appropriate available industry paths"
         ],
         "examples": [
-          "Helps other team member in our areas of expertices",
+          "Helped other team member in our areas of expertices",
           "Collected and delivered feedback",
           "Discussed career options and areas of interest informally",
-          "Mentors an Associate"
+          "Mentored an Associate"
         ]
       },
       {
@@ -683,10 +684,10 @@ export const novumTracks = {
           "Creates space for people to talk through challenges"
         ],
         "examples": [
-          "Sets up and attended regular, constructive 1:1s ",
+          "Setted up and attended regular, constructive 1:1s ",
           "Provided coaching on how to have difficult conversations",
           "Taughts group members the GROW model",
-          "Shares your ideas in goals definition meetings with your team"
+          "Shared their ideas in goals definition meetings with your team"
         ]
       },
       {
@@ -702,8 +703,8 @@ export const novumTracks = {
           "Reviewed individual group member progression every 6 weeks",
           "Suggested appropriate group member for Tech Lead position",
           "Arranged a requested switch of discipline for a group member",
-          "Is able to translate messages from Product to Tech people in his or her current project",
-          "Mentors team member interested in management and shares in a 1:1s meeting with your manager"
+          "Was able to translate messages from Product to Tech people in their current project",
+          "Mentord team member interested in management and shares in a 1:1s meeting with their manager"
         ]
       },
       {
@@ -716,11 +717,11 @@ export const novumTracks = {
           "Develops best practices for conflict resolution"
         ],
         "examples": [
-          "Ensures all group members' roles are meeting their career needs",
+          "Ensured all group members' roles are meeting their career needs",
           "Completed training on situational leadership",
           "Built a resourcing plan based on company, team, and individual goals",
           "Prevented regretted attrition with intentional, targeted intervention",
-          "Defines a Way of Working between Tech and Product"
+          "Defined a Way of Working between Tech and Product"
         ]
       },
       {
@@ -736,8 +737,8 @@ export const novumTracks = {
           "Provided coaching to group leads",
           "Devised courses curriculum for group leads",
           "Advocated to execs for engineer development resources and programs",
-          "Invites Universitas people to make a training in house",
-          "Develops a new tool to use as guide in 1:1s by every manager"
+          "Invited Universitas speakers to make a training in house",
+          "Developd a new tool to use as guide in 1:1s by every manager"
         ]
       }
     ]
