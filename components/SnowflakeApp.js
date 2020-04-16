@@ -140,7 +140,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
     if (state) {
       this.setState(state)
     } else {
-      this.setState(defaultState())
+      this.setState(emptyState())
     }
   }
 
@@ -178,7 +178,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           {/* <a href="https://medium.com/" target="_blank">
             <Wordmark />
           </a> */}
-          <h1>Novum Engineering Career Framework</h1>
+          <h1>Novum Engineering Growth Framework</h1>
         </div>
         <div style={{ display: 'flex' }}>
           <div style={{ flex: 1 }}>
