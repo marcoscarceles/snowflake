@@ -1,16 +1,17 @@
 // @flow
 
-import TrackSelector from '../components/TrackSelector'
-import NightingaleChart from '../components/NightingaleChart'
-import KeyboardListener from '../components/KeyboardListener'
-import Track from '../components/Track'
-import Wordmark from '../components/Wordmark'
-import LevelThermometer from '../components/LevelThermometer'
-import { eligibleTitles, trackIds, milestones, milestoneToPoints } from '../constants'
-import PointSummaries from '../components/PointSummaries'
 import type { Milestone, MilestoneMap, TrackId } from '../constants'
+import { eligibleTitles, milestoneToPoints, milestones, trackIds } from '../constants'
+
+import KeyboardListener from '../components/KeyboardListener'
+import LevelThermometer from '../components/LevelThermometer'
+import NightingaleChart from '../components/NightingaleChart'
+import PointSummaries from '../components/PointSummaries'
 import React from 'react'
 import TitleSelector from '../components/TitleSelector'
+import Track from '../components/Track'
+import TrackSelector from '../components/TrackSelector'
+import Wordmark from '../components/Wordmark'
 
 type SnowflakeAppState = {
   milestoneByTrack: MilestoneMap,
@@ -130,9 +131,9 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
     this.state = emptyState()
   }
 
-  componentDidUpdate() {
+  componentWillUpdate() {
     const hash = stateToHash(this.state)
-    if (hash) window.location.replace(`#${hash}`)
+    // if (hash) window.location.replace(`#${hash}`)
   }
 
   componentDidMount() {
@@ -174,23 +175,8 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
             text-decoration: none;
           }
         `}</style>
-        <div style={{ margin: '19px auto 0' }}>
-          {/* <a href="https://medium.com/" target="_blank">
-            <Wordmark />
-          </a> */}
-          <h1>Novum Engineering Growth Framework</h1>
-        </div>
         <div style={{ display: 'flex' }}>
           <div style={{ flex: 1 }}>
-            <form>
-              <input
-                type="text"
-                className="name-input"
-                value={this.state.name}
-                onChange={e => this.setState({ name: e.target.value })}
-                placeholder="State your name"
-              />
-            </form>
             <h2>Please rate your level of competency on each of the areas below.</h2>
             <p>If you want more information about each of the competencies, visit our <a href="https://docs.google.com/spreadsheets/d/177yMyIl7Oxahb-iPu3nemjhTJ9sLl-t1svFjgoBaXaw/edit?usp=sharing">Competency Matrix in Google Sheets</a>.</p>
             <p>Since it’s impossible to accurately assess a level of competency based on a short sentence the following additional resources are provided:</p>
@@ -199,7 +185,6 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
               <li>A set of behaviours expected of someone having reached that level.</li>
               <li>A set of practices that could (but not necessarily does) demonstrate this level of  competency.</li>
             </ul>
-            <p style={{ fontWeight: 'bold' }}>After completing your self-evaluation (including your full name above and scoring below), please submit the generated URL to <a href="https://docs.google.com/forms/d/e/1FAIpQLSe19Y43rLSX-5pMOgmxXSJ0TFkAePr-w5r79AQ4hdCcLg4vmg/viewform?usp=sf_link">this form</a>.</p>
           </div>
           <div style={{ flex: 0 }}>
             <NightingaleChart
@@ -221,15 +206,6 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           milestoneByTrack={this.state.milestoneByTrack}
           trackId={this.state.focusedTrackId}
           handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
-        <div style={{ display: 'flex', paddingBottom: '20px' }}>
-          <div style={{ flex: 1 }}>
-            Made with ❤️ by Novum Eng, based on an original idea from <a href="https://medium.engineering" target="_blank">Medium Eng</a>.
-            Learn about <a href="https://medium.com/s/engineering-growth-framework" target="_blank">their version of this growth framework</a>
-            {' '}and <a href="https://medium.engineering/engineering-growth-at-medium-4935b3234d25" target="_blank">what they do currently</a>.
-            Get the <a href="https://github.com/Medium/snowflake" target="_blank">source code</a>.
-            Read the <a href="https://medium.com/p/85e078bc15b7" target="_blank">terms of service</a>.
-          </div>
-        </div>
       </main >
     )
   }

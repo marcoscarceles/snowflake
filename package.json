@@ -7,6 +7,9 @@
   "dependencies": {
     "@babel/core": "^7.8.7",
     "@babel/node": "^7.8.7",
+    "@material-ui/core": "^4.9.14",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.53",
     "d3": "^4.11.0",
     "fs": "^0.0.1-security",
     "googleapis": "39",
@@ -14,6 +17,8 @@
     "node-fetch": "^2.6.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "readline": "^1.3.0"
   },
   "scripts": {
